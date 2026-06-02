@@ -1,0 +1,28 @@
+100. Printing statistics.
+
+=== fgmos_rtl_wrapper ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+       30        - wires
+       41        - wire bits
+       14        - public wires
+       25        - public wire bits
+        8        - ports
+       19        - port bits
+       25  325.312 cells
+        1    8.758   sky130_fd_sc_hd__a21o_2
+        3   26.275   sky130_fd_sc_hd__a21oi_2
+        2   15.014   sky130_fd_sc_hd__and3_2
+        2    7.507   sky130_fd_sc_hd__conb_1
+        6  157.651   sky130_fd_sc_hd__dfrtp_2
+        2   12.512   sky130_fd_sc_hd__nand2_2
+        1    6.256   sky130_fd_sc_hd__nor2_2
+        3   18.768   sky130_fd_sc_hd__or2_2
+        1    7.507   sky130_fd_sc_hd__or3_2
+        4   65.062   sky130_fd_sc_hd__xnor2_2
+
+   Chip area for module '\fgmos_rtl_wrapper': 325.312000
+     of which used for sequential elements: 157.651200 (48.46%)
+

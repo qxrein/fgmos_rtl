@@ -1,0 +1,7 @@
+numpy>=1.24
+scipy>=1.10
+matplotlib>=3.7
+pandas>=2.0
+PySpice>=1.5
+schemdraw>=0.18
+gdstk>=0.9

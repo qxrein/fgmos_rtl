@@ -1,0 +1,19 @@
+                               Cells by Function                                
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┓
+┃ Cell Function                                                  ┃ Count       ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━┩
+│ sky130_fd_sc_hd__a21o                                          │ 1           │
+│ sky130_fd_sc_hd__a21oi                                         │ 3           │
+│ sky130_fd_sc_hd__and3                                          │ 2           │
+│ sky130_fd_sc_hd__clkbuf                                        │ 3           │
+│ sky130_fd_sc_hd__clkdlybuf4s25                                 │ 11          │
+│ sky130_fd_sc_hd__decap                                         │ 59531       │
+│ sky130_fd_sc_hd__dfrtp                                         │ 6           │
+│ sky130_fd_sc_hd__fill                                          │ 3391        │
+│ sky130_fd_sc_hd__nand2                                         │ 2           │
+│ sky130_fd_sc_hd__nor2                                          │ 1           │
+│ sky130_fd_sc_hd__or2                                           │ 3           │
+│ sky130_fd_sc_hd__or3                                           │ 1           │
+│ sky130_fd_sc_hd__tapvpwrvgnd                                   │ 3274        │
+│ sky130_fd_sc_hd__xnor2                                         │ 4           │
+└────────────────────────────────────────────────────────────────┴─────────────┘

@@ -1,0 +1,14 @@
+# Magic rcfile — point to sky130A when PDK_ROOT is set
+if {[info exists env(PDK_ROOT)]} {
+    if {![info exists env(PDK)]} {
+        set env(PDK) "sky130A"
+    }
+    set SKY130_MAGIC_DIR "$env(PDK_ROOT)/$env(PDK)/libs.tech/magic"
+    if {[file isdirectory $SKY130_MAGIC_DIR]} {
+        addpath $SKY130_MAGIC_DIR
+        set SKY130_MAGICRC "$SKY130_MAGIC_DIR/$env(PDK).magicrc"
+        if {[file exists $SKY130_MAGICRC]} {
+            source $SKY130_MAGICRC
+        }
+    }
+}

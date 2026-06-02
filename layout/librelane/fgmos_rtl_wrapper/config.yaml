@@ -1,0 +1,32 @@
+# LibreLane 2 / LibreLane flow — fgmos_rtl MPW wrapper (Sky130A)
+DESIGN_NAME: fgmos_rtl_wrapper
+VERILOG_FILES: dir::src/*.v
+CLOCK_PORT: clk
+CLOCK_PERIOD: 20.0
+PNR_SDC_FILE: dir::src/impl.sdc
+SIGNOFF_SDC_FILE: dir::src/signoff.sdc
+IO_PIN_ORDER_CFG: dir::pin_order.cfg
+VDD_PIN: VPWR
+GND_PIN: VGND
+
+FP_SIZING: absolute
+DIE_AREA: [0, 0, 500, 500]
+FP_CORE_UTIL: 25
+FP_ASPECT_RATIO: 1
+PL_TARGET_DENSITY_PCT: 35
+
+# Optional analog macro (enable after Magic export to macros/)
+# EXTRA_GDS_FILES: dir::macros
+# MACROS:
+#   fgmos_rtl_cell:
+#     instances: [u_fgmos]
+#     gds: [macros/fgmos_rtl_cell.gds]
+#     lef: [macros/fgmos_rtl_cell.lef]
+# MACRO_PLACEMENT_CFG: macro_placement.cfg
+
+pdk::sky130A:
+  FP_CORE_UTIL: 25
+  CLOCK_PERIOD: 20.0
+  MAX_FANOUT_CONSTRAINT: 10
+  scl::sky130_fd_sc_hd:
+    CLOCK_PERIOD: 20.0

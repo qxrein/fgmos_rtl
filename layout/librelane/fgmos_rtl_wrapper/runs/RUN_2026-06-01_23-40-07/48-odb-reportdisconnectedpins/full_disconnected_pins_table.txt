@@ -1,0 +1,16 @@
+┏━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┓
+┃ Macro/Instance    ┃ Power Pins ┃ Disconnected ┃ Signal Pins  ┃ Disconnected ┃
+┡━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━┩
+│ fgmos_rtl_wrapper │ VPWR       │              │ clk          │ pad_vctrl[3] │
+│                   │ VGND       │              │ pad_a[0]     │ pad_vctrl[4] │
+│                   │            │              │ pad_a[1]     │ pad_vctrl[5] │
+│                   │            │              │ pad_a[2]     │ pad_vctrl[6] │
+│                   │            │              │ pad_b[0]     │ pad_vctrl[7] │
+│                   │            │              │ pad_b[1]     │              │
+│                   │            │              │ pad_b[2]     │              │
+│                   │            │              │ pad_vctrl[0] │              │
+│                   │            │              │ pad_vctrl[1] │              │
+│                   │            │              │ pad_vctrl[2] │              │
+│                   │            │              │ pad_vout     │              │
+│                   │            │              │ rst_n        │              │
+└───────────────────┴────────────┴──────────────┴──────────────┴──────────────┘

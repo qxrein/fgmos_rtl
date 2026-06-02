@@ -1,0 +1,72 @@
+VERSION 5.8 ;
+NAMESCASESENSITIVE ON ;
+BUSBITCHARS "[]" ;
+DIVIDERCHAR "/" ;
+
+UNITS
+  DATABASE MICRONS 1000 ;
+
+MACRO fgmos_rtl_cell
+  CLASS BLOCK ;
+  ORIGIN 0 0 ;
+  FOREIGN fgmos_rtl_cell 0 0 ;
+  SIZE 50.0 BY 50.0 ;
+  SYMMETRY X Y R90 ;
+  PIN VDD
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met2 ;
+        RECT 2 48 48 50 ;
+    END
+  END VDD
+  PIN VSS
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met2 ;
+        RECT 2 0 48 2 ;
+    END
+  END VSS
+  PIN VOUT
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 22 22 28 28 ;
+    END
+  END VOUT
+  PIN A
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 5 22 10 28 ;
+    END
+  END A
+  PIN B
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 5 12 10 18 ;
+    END
+  END B
+  PIN C
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 5 2 10 8 ;
+    END
+  END C
+  PIN VCTRL
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 40 22 45 28 ;
+    END
+  END VCTRL
+END fgmos_rtl_cell
+END LIBRARY

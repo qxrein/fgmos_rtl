@@ -1,0 +1,9 @@
+- cell: fgmos_rtl_wrapper
+  inout: []
+  input:
+  - pad_vctrl[3]
+  - pad_vctrl[4]
+  - pad_vctrl[5]
+  - pad_vctrl[6]
+  - pad_vctrl[7]
+  output: []

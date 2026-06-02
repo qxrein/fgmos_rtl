@@ -1,0 +1,18 @@
+\begin{table}[ht]
+\centering
+\caption{Area comparison: single-tile FGMOS--RTL versus fixed RTL and CMOS implementations (macro layout target and Sky130 HD gate-count proxies).}
+\label{tbl:area_compare}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Implementation & Transistors & Est.\ area ($\mu$m$^2$) \\
+\midrule
+CMOS NOR3 & 8 & 336 \\
+CMOS AND3 & 8 & 336 \\
+CMOS MAJ3 & 22 & 840 \\
+Conv. RTL & 5 & 2333 \\
+FGMOS–RTL (this) & 5 & 1728 \\
+\midrule
+Wrapper die (LibreLane) & 66233 & 250000 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,42 @@
+[WARNING ORD-0039] .openroad ignored with -python
+[WARNING] Overriding minimum distance 0.1 with 0.42 for pins on side N to avoid overlap.
+Top-level design name: fgmos_rtl_wrapper
+Block boundaries: 0 0 500000 500000
+Horizontal Tracks Origin: 340, Count: 735, Step: 680
+Vertical Tracks Origin: 230, Count: 1087, Step: 460
+Placement details for the N side
+Virtual pin count:  0
+Actual pin count:  6
+Total pin count:  6
+Tracks count:  1087
+Tracks per pin:  181
+Used tracks count:  906
+Unused track count:  181
+Starting track index:  90
+Placement details for the E side
+Virtual pin count:  0
+Actual pin count:  1
+Total pin count:  1
+Tracks count:  368
+Tracks per pin:  368
+Used tracks count:  1
+Unused track count:  367
+Starting track index:  183
+Placement details for the W side
+Virtual pin count:  0
+Actual pin count:  9
+Total pin count:  9
+Tracks count:  368
+Tracks per pin:  40
+Used tracks count:  321
+Unused track count:  47
+Starting track index:  23
+Placement details for the S side
+Virtual pin count:  1
+Actual pin count:  1
+Total pin count:  2
+Tracks count:  1087
+Tracks per pin:  543
+Used tracks count:  544
+Unused track count:  543
+Starting track index:  271

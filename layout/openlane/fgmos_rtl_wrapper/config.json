@@ -1,0 +1,29 @@
+{
+  "DESIGN_NAME": "fgmos_rtl_wrapper",
+  "VERILOG_FILES": "dir::src",
+  "CLOCK_PORT": "clk",
+  "CLOCK_PERIOD": 20.0,
+  "FP_SIZING": "absolute",
+  "DIE_AREA": "0 0 200 200",
+  "FP_CORE_UTIL": 25,
+  "FP_ASPECT_RATIO": 1,
+  "FP_PDN_HPITCH": 25,
+  "FP_PDN_VPITCH": 25,
+  "PL_TARGET_DENSITY": 0.35,
+  "RUN_CVC": 1,
+  "RUN_IRDROP_REPORT": 0,
+  "SYNTH_STRATEGY": "AREA 0",
+  "SYNTH_USE_PG_PINS_DEFINES": "USE_POWER_PINS",
+  "EXTRA_GDS_FILES": "dir::macros",
+  "MACROS": {
+    "fgmos_rtl_cell": {
+      "instances": ["u_fgmos"],
+      "gds": ["macros/fgmos_rtl_cell.gds"],
+      "lef": ["macros/fgmos_rtl_cell.lef"]
+    }
+  },
+  "MACRO_PLACEMENT_CFG": "macro_placement.cfg",
+  "VDD_PIN": "vccd1",
+  "GND_PIN": "vssd1",
+  "PRIMARY_GDSII_STREAM": "merged.gds"
+}

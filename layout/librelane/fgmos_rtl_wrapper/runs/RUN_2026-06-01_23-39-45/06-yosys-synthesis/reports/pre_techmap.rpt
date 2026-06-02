@@ -1,0 +1,27 @@
+86. Printing statistics.
+
+=== fgmos_rtl_wrapper ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       24 wires
+       43 wire bits
+       10 public wires
+       25 public wire bits
+        8 ports
+       19 port bits
+       22 cells
+        2   $_ANDNOT_
+        6   $_DFF_PN0_
+        2   $_NOT_
+        4   $_OR_
+        4   $_XNOR_
+        4   $_XOR_
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_DFF_PN0_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+

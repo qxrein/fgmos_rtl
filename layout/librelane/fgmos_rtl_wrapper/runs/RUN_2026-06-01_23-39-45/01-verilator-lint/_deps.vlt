@@ -1,0 +1,5 @@
+`verilator_config
+lint_off -rule DECLFILENAME
+lint_off -rule EOFNEWLINE
+lint_off -rule UNDRIVEN -file "/Users/rein/projects/fgmos_rtl/layout/librelane/fgmos_rtl_wrapper/runs/RUN_2026-06-01_23-39-45/tmp/93c9f431b3664eeab13234847e0efd25.bb.v"
+lint_off -rule UNUSEDSIGNAL -file "/Users/rein/projects/fgmos_rtl/layout/librelane/fgmos_rtl_wrapper/runs/RUN_2026-06-01_23-39-45/tmp/93c9f431b3664eeab13234847e0efd25.bb.v"

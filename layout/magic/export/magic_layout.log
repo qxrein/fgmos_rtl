@@ -1,0 +1,33 @@
+
+Magic 8.3 revision 623 - Compiled on Tue Mar 17 08:21:45 UTC 2026.
+Starting magic under Tcl interpreter
+Using the terminal as the console.
+WARNING: RLIMIT_NOFILE is above 1024 and Tcl_Version<9 this may cause runtime issues [rlim_cur=1048576]
+Using NULL graphics device.
+Processing system .magicrc file
+Switching to WIRING tool.
+Switching to NETLIST tool.
+Switching to PICK tool.
+Switching to BOX tool.
+Sourcing design .magicrc for technology sky130A ...
+2 Magic internal units = 1 Lambda
+Input style sky130(): scaleFactor=2, multiplier=2
+The following types are not handled by extraction and will be treated as non-electrical types:
+    ubm 
+Scaled tech values by 2 / 1 to match internal grid scaling
+Loading sky130A Device Generator Menu ...
+Using technology "sky130A", version 1.0.530-0-g8afc834
+Grid scaling is finer than limit set by the process!
+Cell fgmos_rtl_cell couldn't be read
+No such file or directory
+Creating new cell
+Root cell box:
+           width x height  (   llx,  lly  ), (   urx,  ury  )  area (units^2)
+
+microns:  140.000 x 100.000  ( 0.000,  0.000), ( 140.000,  100.000)  14000.000 
+lambda:   14000.00 x 10000.00  (  0.00,  0.00 ), ( 14000.00,  10000.00)  140000000.00
+internal:  28000 x 20000   (     0,  0    ), ( 28000,  20000)  560000000 
+INFO: Created/loaded fgmos_rtl_cell guide canvas.
+INFO: Place sky130_fd_pr__nfet_01v8 and MIM caps manually in Magic GUI.
+INFO: Then rerun extraction with ./run_magic_extract.sh.
+   Generating output for cell fgmos_rtl_cell

@@ -1,0 +1,17 @@
+[WARNING ORD-0039] .openroad ignored with -python
+Unannotated report:
+['report_parasitic_annotation -report_unannotated\n',
+ '============================================================================\n',
+ 'Found 5 unannotated drivers.\n',
+ ' pad_vctrl[3]\n',
+ ' pad_vctrl[4]\n',
+ ' pad_vctrl[5]\n',
+ ' pad_vctrl[6]\n',
+ ' pad_vctrl[7]\n',
+ 'Found 0 partially unannotated drivers.\n',
+ '\n']
+Reported nets:
+['pad_vctrl[3]', 'pad_vctrl[4]', 'pad_vctrl[5]', 'pad_vctrl[6]', 'pad_vctrl[7]']
+Filtered nets:
+[]
+done

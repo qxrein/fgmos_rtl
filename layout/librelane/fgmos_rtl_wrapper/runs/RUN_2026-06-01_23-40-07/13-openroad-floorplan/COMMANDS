@@ -1,0 +1,1 @@
+openroad -exit -no_splash -metrics /Users/rein/projects/fgmos_rtl/layout/librelane/fgmos_rtl_wrapper/runs/RUN_2026-06-01_23-40-07/13-openroad-floorplan/or_metrics_out.json /Users/rein/projects/librelane/librelane/scripts/openroad/floorplan.tcl
