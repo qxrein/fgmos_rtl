@@ -11,12 +11,12 @@
 \graphicspath{{figures/}}
 
 \setcounter{topnumber}{4}
-\setcounter{bottomnumber}{4}
+\setcounter{bottomnumber}{2}
 \setcounter{totalnumber}{6}
-\renewcommand{\topfraction}{0.92}
-\renewcommand{\bottomfraction}{0.85}
-\renewcommand{\textfraction}{0.07}
-\renewcommand{\floatpagefraction}{0.75}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.50}
+\renewcommand{\textfraction}{0.10}
+\renewcommand{\floatpagefraction}{0.70}
 
 \begin{document}
 \let\WriteBookmarks\relax
@@ -50,12 +50,11 @@ coupling capacitors, is programmed only through the control voltage $V_{\mathrm{
 to realize NOR, majority, and AND functions without interconnect changes. When the
 floating node is biased near the decision boundary, thermal and residual charge noise
 produce a tunable probabilistic response suitable for CMOS-native probabilistic bits
-(p-bits). Behavioral and ngspice simulations with foundry-aligned parameters show
-more than a $26\times$ resistance tuning range, distinct $V_{\mathrm{ctrl}}$ bands for
-the three logic modes, and lag-1 autocorrelation below the 95\,\% confidence limit for
-a 5000-sample stochastic stream. Simulations are performed using open-source tools only;
-results are not validated against silicon measurements. The study is fully reproducible
-with the open simulation package that accompanies the manuscript.
+(p-bits). Simulations with foundry-aligned parameters show more than a $26\times$
+resistance tuning range, distinct $V_{\mathrm{ctrl}}$ bands for the three logic modes,
+and lag-1 autocorrelation below the 95\,\% confidence limit for a 5000-sample
+stochastic stream. Results are not validated against silicon measurements. The study
+is fully reproducible with the package that accompanies the manuscript.
 \end{abstract}
 
 \begin{highlights}
@@ -64,8 +63,8 @@ with the open simulation package that accompanies the manuscript.
 \item NOR, majority, and AND obtained from one cell by varying $V_{\mathrm{ctrl}}$ only,
   without interconnect changes
 \item Native p-bit statistics from $kT/C$ noise without magnetic or resistive-RAM elements
-\item Post-layout sign-off: extraction, PVT (TT/SS/FF), mismatch MC, delay/energy vs RTL/CMOS
-\item Magic + LibreLane layout flow prepared for Sky130 MPW tapeout
+\item Sign-off analysis: PVT (TT/SS/FF), mismatch MC, delay/energy vs RTL/CMOS; wrapper STA
+\item Digital MPW wrapper (pad frame and GPIO harness) prepared for Sky130
 \end{highlights}
 
 \begin{keywords}
@@ -77,7 +76,6 @@ probabilistic computing \sep resistor--transistor logic
 
 \section{Introduction}
 \label{sec:intro}
-
 The semiconductor industry's continued scaling of programmable logic has renewed
 interest in floating-gate MOS (FGMOS) transistors, which store analog weights on an
 isolated gate node and have been applied to programmable logic, neural mapping, and
@@ -115,24 +113,18 @@ behavior across eight three-input minterms.
 (3)~A p-bit operating mode based on capacitive coupling and charge noise on a 30\,fF
 floating node, with tunable transition width and low serial correlation in Monte Carlo
 bit streams.
-(4)~An open simulation package (Python behavioral model, ngspice netlists, and
-publication figures) aligned with tt-corner Sky130 parameters.
-(5)~A layout and tapeout-preparation flow: custom analog layout in
-Magic~\cite{MagicVLSI} and a digital pad/GPIO wrapper in LibreLane~\cite{LibreLane2024}
-for Sky130 MPW submission. We do \textbf{not} report silicon measurements in this
-work; post-layout extraction and BSIM4 correlation are ongoing.
+(4)~A reproducible simulation and figure package aligned with tt-corner Sky130
+parameters.
+(5)~Schematic-aligned analog netlist and digital MPW pad/GPIO wrapper flow for
+Sky130 submission. We do \textbf{not} report silicon measurements in this work.
 
 The remainder of the paper is organized as follows. Section~\ref{sec:related} reviews
-related work. Section~\ref{sec:cell} describes the cell and programming equations.
-Section~\ref{sec:methods} outlines the simulation framework.
-Section~\ref{sec:layout} describes layout and the LibreLane wrapper.
-Section~\ref{sec:results} presents simulation results, and
-Sections~\ref{sec:discuss}--\ref{sec:concl} discuss implications and conclude.
+related work; Section~\ref{sec:cell} the cell; Section~\ref{sec:methods} simulation;
+Section~\ref{sec:layout} tapeout preparation; Section~\ref{sec:results} results;
+Sections~\ref{sec:discuss}--\ref{sec:concl} discussion and conclusion.
 
-% ============================================================
 \section{Related Work}
 \label{sec:related}
-
 Wisland et al.~\cite{Wisland2003} demonstrated FGMOS-based reconfigurable gates in a
 0.5\,$\mu$m technology using inverter-style topologies and saturation-region operation;
 functions such as XNOR, NAND, and XOR were obtained by threshold programming rather
@@ -143,7 +135,7 @@ often introduces non-volatile or bistable resistive elements that are not availa
 baseline digital PDKs~\cite{Kim2024,Camsari2019}. Table~\ref{tbl:prior} summarizes
 how the present cell compares to these approaches.
 
-\begin{table}[ht]
+\begin{table}[htb]
 \centering
 \caption{Qualitative comparison with representative prior art.}
 \label{tbl:prior}
@@ -160,10 +152,10 @@ Open PDK path     & Sky130          & 0.5\,$\mu$m CMOS & 8-inch custom    \\
 \end{tabular}
 \end{table}
 
-% ============================================================
+\FloatBarrier
+
 \section{Proposed FGMOS--RTL Cell}
 \label{sec:cell}
-
 \subsection{Circuit Topology}
 
 Fig.~\ref{fig:schematic} shows the proposed cell. The supply $V_{\mathrm{CC}}=1.8$\,V
@@ -174,7 +166,7 @@ floating gate through a 10\,fF MIM capacitor; the programming line $V_{\mathrm{c
 uses a 5\,fF capacitor, with 3\,fF and 2\,fF parasitic couplings from source and drain,
 giving $C_T = 30$\,fF total.
 
-\begin{figure}[!htbp]
+\begin{figure}[htb]
 \centering
 \includegraphics[width=0.52\columnwidth]{fig1_rtl_schematic}
 \caption{Schematic of the proposed FGMOS--RTL cell. The fixed RTL base resistor is
@@ -183,6 +175,8 @@ $V_{\mathrm{fg,eff}}$). Inputs $A$--$C$ and $V_{\mathrm{ctrl}}$ couple to the fl
 gate through MIM capacitors.}
 \label{fig:schematic}
 \end{figure}
+
+\FloatBarrier
 
 \subsection{Programming Equations}
 
@@ -219,16 +213,12 @@ with $W_{\mathrm{in}}/L_{\mathrm{in}}$ matched to the FGMOS device. Programming
 $V_{\mathrm{ctrl}}$ shifts both $R_{\mathrm{eff}}$ and the mapping from $V_{\mathrm{out}}$
 to digitized logic levels, enabling mode selection without altering layout.
 
-% ============================================================
 \section{Simulation Methodology}
 \label{sec:methods}
-
-Simulations were performed in two layers. A Python behavioral model implements
-Eqs.~(\ref{eq:vfg})--(\ref{eq:vout}) and sweeps $V_{\mathrm{fg,eff}}$, $V_{\mathrm{ctrl}}$,
-and noise samples. Complementary ngspice netlists include a Level-1 NFET surrogate with
-the same $W$, $L$, and tt parameters, plus the capacitive subcircuit \texttt{FGMOS\_3IN};
-these netlists are used for resistance and logic verification. Table~\ref{tbl:params}
-lists the parameters common to both flows.
+Simulations use a behavioral layer implementing Eqs.~(\ref{eq:vfg})--(\ref{eq:vout})
+and a complementary circuit netlist with a Level-1 NFET surrogate ($W$, $L$, tt
+parameters) plus subcircuit \texttt{FGMOS\_3IN} for resistance and logic checks.
+Table~\ref{tbl:params} lists parameters common to both flows.
 
 Monte Carlo p-bit studies draw
 $\Delta V_{\mathrm{fg}} \sim \mathcal{N}(0,\sigma^2)$ with $\sigma = \alpha\sigma_0$ and
@@ -237,11 +227,9 @@ mode-dependent thresholds determined from the $V_{\mathrm{ctrl}}$ band (NOR:
 $V_{\mathrm{ctrl}} \approx 0.55$--$0.78$\,V; majority: $0.78$--$1.02$\,V; AND:
 $1.02$--$1.35$\,V).
 
-Post-layout sign-off uses Magic extraction followed by Netgen LVS on the analog
-macro, and LibreLane Magic/Netgen steps on the digital wrapper (parasitic
-\texttt{.spice} under \texttt{runs/*/final/spice/}). Cell-level delay and energy
-are estimated from Eqs.~(\ref{eq:reff})--(\ref{eq:vout}) with
-$C_L=80$\,fF; the wrapper reports multi-corner STA slack after place-and-route.
+Cell-level delay and energy are estimated from Eqs.~(\ref{eq:reff})--(\ref{eq:vout}) with
+$C_L=80$\,fF. Wrapper timing margins use multi-corner static timing after
+place-and-route.
 Process--voltage--temperature (PVT) corners follow Sky130 sign-off labels
 \texttt{nom\_tt\_025C\_1v80} (TT, 25\,$^\circ$C, 1.80\,V),
 \texttt{nom\_ss\_100C\_1v60} (SS, 125\,$^\circ$C, 1.60\,V), and
@@ -251,72 +239,9 @@ mismatch draws $\sigma_{V_{th0}}=20$\,mV and $\sigma_{k_n}/k_n=5\%$ on
 single-tile FGMOS--RTL cell to a fixed 10\,k$\Omega$ RTL divider and to
 minimum-width Sky130 HD CMOS NOR3/MAJ3/AND3 implementations.
 
-% ============================================================
-\section{Layout and Tapeout Preparation}
-\label{sec:layout}
-
-Simulation establishes circuit behavior; manufacturability requires a
-DRC-clean layout in the Sky130 stack and a pad-accessible test chip.
-We split implementation into two open-source steps aligned with common MPW
-practice~\cite{EfablessMPW,SkyWater2020}.
-
-\paragraph{Magic analog macro.}
-The FGMOS--RTL tile (\texttt{fgmos\_rtl\_cell}) is laid out in Magic with
-\texttt{nfet\_01v8} ($W=2\,\mu$m, $L=150$\,nm) and MIM coupling capacitors
-(10\,fF on $A$--$C$, 5\,fF on $V_{\mathrm{ctrl}}$) on the floating-gate node.
-Tcl scripts (\texttt{layout/magic/}) load the \texttt{sky130A} technology file,
-place the pull-up FGMOS and three input devices, label the \texttt{fg\_node}
-net for LVS, and export GDSII/LEF into \texttt{layout/magic/export/}.
-DRC uses foundry rule decks bundled with the PDK. Post-layout extraction runs
-\texttt{extract all} in Magic to build \texttt{fgmos\_rtl\_cell.ext}, then Netgen
-compares layout versus \texttt{layout/xschem/fgmos\_rtl.sp} (ports match ngspice
-\texttt{FGMOS\_3IN}). Extracted RC networks back-annotate the pre-layout models in
-Section~\ref{sec:methods}. In practice, Magic and Netgen are launched from the
-LibreLane Nix shell (not the host PATH), e.g.\ \texttt{cd \$HOME/projects/librelane
-\&\& nix develop --command bash -lc 'export PDK\_ROOT=<...>; export PDK=sky130A;
-cd <repo>/layout \&\& make magic-extract'}. If GUI/X11 is unavailable on the host,
-the batch targets still run (\texttt{make magic}, \texttt{make magic-extract}) and
-produce deterministic placeholders; full analog extraction requires actual device
-placement in the Magic macro cell.
-
-\paragraph{LibreLane digital wrapper.}
-Full-chip tapeout adds I/O pads, power distribution, and a simple digital
-harness so off-chip logic can drive $A$, $B$, $C$, and $V_{\mathrm{ctrl}}$ and
-read $V_{\mathrm{out}}$.
-The module \texttt{fgmos\_rtl\_wrapper} (Verilog in
-\texttt{layout/librelane/fgmos\_rtl\_wrapper/src/}) is synthesized and placed
-with LibreLane~\cite{LibreLane2024} (OpenLane~2 lineage~\cite{OpenLane2024})
-via \texttt{layout/run\_librelane.sh}, which invokes the tool from a local
-\texttt{librelane} checkout inside \texttt{nix develop}.
-The analog macro \texttt{u\_fgmos} is reserved in \texttt{config.yaml} and
-enabled once Magic exports \texttt{fgmos\_rtl\_cell\{.gds,.lef\}} to
-\texttt{macros/}; the completed wrapper run uses sky130 HD standard cells on a
-$500\,\mu$m$\times 500\,\mu$m die (\texttt{DIE\_AREA} in \texttt{config.yaml}).
-Fig.~\ref{fig:openlane_fab} shows the merged GDS exported from LibreLane
-(final stream-out under \texttt{runs/*/final/gds/}).
-
-\begin{figure}[!htbp]
+\begin{table}[htb]
 \centering
-\includegraphics[width=0.52\columnwidth]{fig8_openlane_fabric}
-\caption{Fabrication layout from the LibreLane merged GDS (layer-filtered
-viewer export). Outer boundary: $500\,\mu$m$\times 500\,\mu$m wrapper die;
-interior: synthesized digital harness and PDK fill (analog macro placement
-pending Magic LEF/GDS).}
-\label{fig:openlane_fab}
-\end{figure}
-
-\paragraph{Status.}
-Layout scripts, wrapper RTL, LibreLane configuration, and GDS rendering for the
-paper are included in \texttt{layout/}. A reference LibreLane run completed
-DRC/LVS on the digital wrapper; final MPW sign-off still requires the Magic
-macro in \texttt{macros/} and environment-specific \texttt{PDK\_ROOT}. At present,
-the batch Magic macro is a guide canvas (for reproducible floorplan dimensions) and
-does not yet contain extracted active devices. No
-silicon measurements are reported here.
-
-\begin{table}[ht]
-\centering
-\caption{Sky130 tt-corner parameters used in behavioral and SPICE simulations.}
+\caption{Sky130 tt-corner parameters used in simulations.}
 \label{tbl:params}
 \begin{tabular}{lll}
 \toprule
@@ -335,12 +260,50 @@ Total floating capacitance & $C_T$                & 30\,fF \\
 \end{tabular}
 \end{table}
 
-% ============================================================
+\FloatBarrier
+
+\section{Layout and Tapeout Preparation}
+\label{sec:layout}
+Simulation establishes circuit behavior; a pad-accessible test chip requires a
+DRC-clean digital shell in the Sky130 stack. The repository provides a
+schematic-aligned SPICE netlist for the analog tile and an open-source digital
+wrapper flow aligned with common MPW practice~\cite{EfablessMPW,SkyWater2020}.
+
+\paragraph{Analog netlist.}
+The FGMOS--RTL tile is captured as subcircuit \texttt{fgmos\_rtl\_cell} in
+\texttt{layout/xschem/fgmos\_rtl.sp}: a \texttt{FGMOS\_3IN} instance with
+\texttt{nfet\_01v8} pull-down devices ($W=2\,\mu$m, $L=150$\,nm) and 10\,fF
+MIM coupling on $A$--$C$ (5\,fF on $V_{\mathrm{ctrl}}$), matching the parameters
+in Table~\ref{tbl:params}. Custom analog layout and LVS are outside the scope of
+this manuscript; electrical results use the models in Section~\ref{sec:methods}.
+
+\paragraph{Digital wrapper.}
+Tapeout adds I/O pads, power distribution, and a GPIO harness so off-chip logic
+can drive $A$, $B$, $C$, and $V_{\mathrm{ctrl}}$ and read $V_{\mathrm{out}}$.
+Module \texttt{fgmos\_rtl\_wrapper} is synthesized and placed on a
+$500\,\mu$m$\times 500\,\mu$m die; analog macro \texttt{u\_fgmos} is
+black-boxed in the reference RTL. Fig.~\ref{fig:openlane_fab} shows the merged
+layout view from the completed reference run.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.75\columnwidth]{fig8_openlane_fabric}
+\caption{Merged layout (layer-filtered viewer export). Outer boundary:
+$500\,\mu$m$\times 500\,\mu$m wrapper die; interior: digital GPIO harness and
+PDK fill (analog macro not integrated).}
+\label{fig:openlane_fab}
+\end{figure}
+
+\paragraph{Status.}
+Wrapper RTL, schematic netlist, and layout artifacts are in \texttt{layout/}.
+The reference digital run completed DRC/LVS on the wrapper shell. No silicon
+measurements are reported.
+
+\FloatBarrier
+
 \section{Results}
 \label{sec:results}
-
 \subsection{Programmable Base Resistance}
-
 Fig.~\ref{fig:reff} plots $R_{\mathrm{eff}}$ as a function of $V_{\mathrm{fg,eff}}$
 for the ohmic model. The resistance spans approximately 0.4\,k$\Omega$ to
 9.3\,k$\Omega$ (a ratio greater than $26\times$), whereas a conventional RTL design
@@ -349,7 +312,7 @@ nominal logic-programming window for $V_{\mathrm{fg,eff}}$. This tunability is t
 physical basis for reconfiguring the divider in Sections~\ref{sec:logic}
 and~\ref{sec:pbit}.
 
-\begin{figure}[!htbp]
+\begin{figure}[htb]
 \centering
 \includegraphics[width=0.52\columnwidth]{fig2_Reff_vs_Vfg}
 \caption{Effective FGMOS resistance $R_{\mathrm{eff}}$ versus $V_{\mathrm{fg,eff}}$
@@ -357,11 +320,11 @@ in the ohmic region. The dashed line indicates a fixed 10\,k$\Omega$ RTL resisto
 the green band is the nominal programming window.}
 \label{fig:reff}
 \end{figure}
+
 \FloatBarrier
 
 \subsection{Logic Reconfiguration versus $V_{\mathrm{ctrl}}$}
 \label{sec:logic}
-
 Fig.~\ref{fig:heatmap} maps the digitized output for all eight input vectors $(A,B,C)$
 as $V_{\mathrm{ctrl}}$ is swept from 0.55\,V to 1.35\,V. Three contiguous bands
 implement NOR, majority, and AND truth tables (Table~\ref{tbl:truth}) without any change
@@ -370,7 +333,7 @@ below the low threshold; in the AND band, only the all-ones minterm is recognize
 logic~1. The majority band correctly classifies minterms with two or more asserted
 inputs.
 
-\begin{figure}[!htbp]
+\begin{figure}[htb]
 \centering
 \includegraphics[width=0.52\columnwidth]{fig3_logic_heatmap}
 \caption{Digitized output as a function of $V_{\mathrm{ctrl}}$ and input minterm
@@ -378,7 +341,7 @@ $(A,B,C)$. Horizontal bands correspond to NOR, majority (MAJ), and AND programmi
 \label{fig:heatmap}
 \end{figure}
 
-\begin{table}[ht]
+\begin{table}[htb]
 \centering
 \caption{Target truth tables for the three programming bands in Fig.~\ref{fig:heatmap}.}
 \label{tbl:truth}
@@ -397,11 +360,11 @@ $A$ & $B$ & $C$ & & NOR & MAJ & AND \\
 \bottomrule
 \end{tabular}
 \end{table}
+
 \FloatBarrier
 
 \subsection{Probabilistic-Bit Characteristics}
 \label{sec:pbit}
-
 For probabilistic operation the cell is biased in the NOR-programming range with one
 input held high so that $V_{\mathrm{out}}$ lies on the steep portion of the divider
 characteristic. Gaussian perturbations $\Delta V_{\mathrm{fg}}$ emulate thermal and
@@ -411,34 +374,34 @@ Fig.~\ref{fig:autocorr} reports the lag-1 autocorrelation of a 5000-sample binar
 stream at $\sigma = 30\sigma_0$; the first lag lies within the 95\,\% confidence
 interval for uncorrelated data~\cite{Camsari2019}.
 
-\begin{figure*}[!t]
+\begin{figure}[htb]
 \centering
-\includegraphics[width=0.92\textwidth]{fig4_pbit_combined}
+\includegraphics[width=0.92\columnwidth]{fig4_pbit_combined}
 \caption{Probabilistic-bit characteristics. \textbf{(a)}~Monte Carlo estimate of
 $P(V_{\mathrm{out}}=1)$ versus $V_{\mathrm{fg}}$ for several $\sigma/\sigma_0$.
 \textbf{(b)}~Sigmoid transition width versus $\sigma/\sigma_0$ (log scale).}
 \label{fig:pbit}
-\end{figure*}
+\end{figure}
 
-\begin{figure}[!htbp]
+\begin{figure}[htb]
 \centering
 \includegraphics[width=0.52\columnwidth]{fig6_autocorrelation}
 \caption{Lag-1 autocorrelation of the p-bit stream; dashed lines indicate the 95\,\%
 confidence bounds for white noise.}
 \label{fig:autocorr}
 \end{figure}
+
 \FloatBarrier
 
 \subsection{Summary of Simulation Results}
-
 Table~\ref{tbl:summary} aggregates results for all experimental configurations.
 
-\begin{table}[ht]
+\begin{table}[htb]
 \centering
 \footnotesize
 \caption{Summary of key simulation results across the three operating modes.
-$R_{\mathrm{eff}}$ range is from the behavioral ohmic model; logic results are from
-ngspice; p-bit autocorrelation is a 5000-sample Monte Carlo estimate.}
+$R_{\mathrm{eff}}$ from the ohmic model; logic from circuit netlists; p-bit
+autocorrelation from 5000-sample Monte Carlo.}
 \label{tbl:summary}
 \begingroup
 \setlength{\tabcolsep}{4pt}
@@ -455,18 +418,14 @@ P-bit    & NOR range  & $\approx$7 & Sigmoid $P=0.5$ & $< 95\%$ CI \\
 \end{tabular}
 \endgroup
 \end{table}
+
 \FloatBarrier
 
 \subsection{Sign-Off and Comparative Analysis}
 \label{sec:signoff}
-
-\paragraph{Post-layout extraction.}
-On the digital wrapper, LibreLane step \texttt{magic-spiceextraction} and Netgen
-LVS (\texttt{netgen-lvs}) produce sign-off views; the merged layout netlist is
-archived as \texttt{final/spice/fgmos\_rtl\_wrapper.spice}. The analog macro flow
-uses the same Magic$\rightarrow$Netgen pattern once \texttt{fgmos\_rtl\_cell.gds}
-is exported; until then, cell metrics use the schematic parameters in
-Table~\ref{tbl:params}.
+\paragraph{Wrapper sign-off.}
+The reference digital run provides merged layout views. Analog tile metrics use
+Table~\ref{tbl:params} and the behavioral model, not a fabricated layout netlist.
 
 \paragraph{Area.}
 Table~\ref{tbl:area_compare} compares estimated tile areas. The FGMOS--RTL macro
@@ -478,6 +437,8 @@ $2.0\%$ standard-cell utilization (harness and fill).
 
 \input{tables/table_area_compare.tex}
 
+\FloatBarrier
+
 \paragraph{Delay and energy per evaluation.}
 Table~\ref{tbl:delay_energy} lists RC time constants $\tau=R_{\mathrm{eff}}C_L$
 and 90\,\% settling $t_{90}\approx 2.3\tau$ for one asserted input. FGMOS--RTL
@@ -488,7 +449,9 @@ modes and PVT corners (Table~\ref{tbl:pvt_cell}).
 
 \input{tables/table_signoff_delay_energy.tex}
 
-\begin{table}[ht]
+\FloatBarrier
+
+\begin{table}[htb]
 \centering
 \caption{Behavioral cell delay and energy across PVT corners (NOR band, one input high).}
 \label{tbl:pvt_cell}
@@ -503,24 +466,28 @@ FF ($-40$\,$^\circ$C, 1.95\,V) & 57 & 418 & OK \\
 \end{tabular}
 \end{table}
 
-\paragraph{LibreLane STA (wrapper).}
-Post-place-and-route setup and hold worst-slack values for the GPIO harness appear
-in Table~\ref{tbl:pvt_sta} (clock period 20\,ns). These corners confirm margin on
-the digital shell; analog macro timing will be revisited after hard-IP integration.
+\FloatBarrier
+
+\paragraph{Wrapper STA.}
+Post-place-and-route setup and hold worst slacks for the GPIO harness appear in
+Table~\ref{tbl:pvt_sta} (clock period 20\,ns).
 
 \input{tables/table_pvt_sta.tex}
 
-\begin{figure}[!htbp]
+\FloatBarrier
+
+\begin{figure}[htb]
 \centering
 \includegraphics[width=0.52\columnwidth]{fig9_signoff_pvt}
 \caption{Sign-off delay analysis (behavioral model, $C_L=80$\,fF).
 \textbf{(a)}~RC time constant $\tau$ by programming mode at TT compared with a fixed
 10\,k$\Omega$ conventional RTL pull-up.
 \textbf{(b)}~NOR-band $\tau$ across TT (25\,$^\circ$C), SS (125\,$^\circ$C), and
-FF ($-40$\,$^\circ$C) corners; LibreLane wrapper STA slacks are listed in
-Table~\ref{tbl:pvt_sta}.}
+FF ($-40$\,$^\circ$C) corners; wrapper STA slacks in Table~\ref{tbl:pvt_sta}.}
 \label{fig:signoff_pvt}
 \end{figure}
+
+\FloatBarrier
 
 \paragraph{Monte Carlo mismatch.}
 With independent $V_{th0}$ and $k_n$ perturbations, all $N=500$ samples preserved
@@ -529,7 +496,9 @@ mean $103$\,ps ($\sigma=10$\,ps, Fig.~\ref{fig:mismatch_tau}).
 
 \input{tables/table_mismatch_mc.tex}
 
-\begin{figure}[!htbp]
+\FloatBarrier
+
+\begin{figure}[htb]
 \centering
 \includegraphics[width=0.52\columnwidth]{fig10_mismatch_tau}
 \caption{Mismatch Monte Carlo distribution of $\tau$ (NOR band, $N=500$).}
@@ -538,27 +507,20 @@ mean $103$\,ps ($\sigma=10$\,ps, Fig.~\ref{fig:mismatch_tau}).
 
 \FloatBarrier
 
-% ============================================================
 \section{Discussion}
 \label{sec:discuss}
-
 Operating the FGMOS in the ohmic region trades the gain of an inverter for a directly
 programmable resistance, which is the quantity RTL logic is most sensitive to. The
 simulated $26\times$ tuning range exceeds the margin needed to move between the three
-logic bands in Fig.~\ref{fig:heatmap}. Section~\ref{sec:layout} documents a Magic + LibreLane path to MPW
-submission~\cite{SkyWater2020,EfablessMPW,LibreLane2024}. Section~\ref{sec:signoff}
-reports extraction methodology, area/delay/energy estimates, PVT and mismatch
-studies, and comparisons to fixed RTL and CMOS baselines; BSIM4 correlation on the
-extracted macro netlist remains the next step to tighten agreement with silicon.
+logic bands in Fig.~\ref{fig:heatmap}. Section~\ref{sec:layout} documents MPW
+wrapper preparation~\cite{SkyWater2020,EfablessMPW}. Section~\ref{sec:signoff}
+reports area, delay/energy, PVT, mismatch, and RTL/CMOS comparisons from models.
 
 \paragraph{Limitations.}
-Electrical results in Section~\ref{sec:results} are from behavioral and ngspice
-models, not from fabricated silicon. No measured $I$--$V$, noise, or logic
-waveforms are reported. Layout scripts and wrapper RTL are provided, but
-foundry sign-off DRC/LVS logs are environment-dependent and not bundled as
-golden results in this submission. Cell-level delay and energy use the behavioral
-model with estimated $C_L$; wrapper STA uses extracted standard-cell timing.
-Analog macro extraction is pending final Magic export.
+Electrical results are from simulation models, not fabricated silicon. No measured
+$I$--$V$, noise, or logic waveforms are reported. Foundry sign-off logs are
+environment-dependent and not bundled as golden results. Custom analog layout and
+extraction are not included.
 
 The p-bit mode does not require magnetic junctions or filamentary resistive RAM, but
 it does require careful control of initial charge $Q_0$ and may exhibit slow drift
@@ -569,53 +531,35 @@ $E_{\mathrm{eval}}$ at $\approx 356$\,fJ for FGMOS--RTL versus $\approx 259$\,fJ
 for fixed RTL at the same load (lower $R$ yields faster settling at comparable
 switching energy on the floating node).
 
-% ============================================================
 \section{Conclusion}
 \label{sec:concl}
-
 This paper described an FGMOS--RTL cell for the Sky130 open PDK in which a
 floating-gate transistor in the triode region replaces the fixed RTL pull-up resistor.
-Behavioral and ngspice simulations show wide resistance programmability ($>26\times$),
-three logic modes selected by $V_{\mathrm{ctrl}}$ alone, and p-bit statistics with
-tunable sigmoid width and low lag-1 autocorrelation on a 5000-sample stream.
-Sign-off analysis documents post-layout extraction, area and delay/energy metrics,
-TT/SS/FF corners, mismatch robustness, and favorable comparison to fixed RTL and
-discrete CMOS implementations for multi-function density. The approach separates
-this work from saturation-programmed inverter logic and from custom-fabrication
-p-bit devices, while remaining within a manufacturable CMOS flow. A Magic macro
-plus LibreLane wrapper targets Sky130 MPW tapeout; immediate next steps are
-finalized macro DRC/LVS, BSIM4 back-annotation on extracted netlists, and bench
-measurement after fabrication.
+Simulations show wide resistance programmability ($>26\times$), three logic modes
+selected by $V_{\mathrm{ctrl}}$ alone, and p-bit statistics with tunable sigmoid
+width and low lag-1 autocorrelation. Sign-off analysis covers area, delay/energy,
+PVT, mismatch, and comparison to fixed RTL and discrete CMOS baselines. Bench
+measurement after fabrication remains future work.
 
-% ============================================================
 \section*{Declaration of Competing Interest}
-
 The author declares no competing financial or personal interests that could have
 appeared to influence the work reported in this paper.
 
 \section*{Funding}
-
 This research received no specific grant from any funding agency in the public,
 commercial, or not-for-profit sectors.
 
 \section*{Data Availability}
-
-The behavioral model, ngspice netlists, CSV data, layout scripts (Magic/LibreLane),
-and figure sources are available in the repository at \url{https://github.com/qxrein}.
-Rebuild simulation and sign-off tables with \texttt{python sim/main.py}; render the LibreLane
-GDS figure with \texttt{make -C layout openlane-figure} (or \texttt{bash
-layout/run\_librelane.sh}); run Magic/LibreLane as described in
-\texttt{layout/README.md}.
+Simulation data, netlists, layout artifacts, and figure sources are available at
+\url{https://github.com/qxrein}. Build instructions are in the repository README.
 
 \section*{Acknowledgments}
-
-The simulations use the SkyWater Sky130 open PDK~\cite{SkyWater2020} and ngspice, and
-the behavioral model is implemented in Python with NumPy and Matplotlib. The author
-thanks the open-source EDA community for maintaining publicly accessible process design
-kits and simulation tools.
+This work used the SkyWater Sky130 open PDK~\cite{SkyWater2020}, ngspice, Python with
+NumPy and Matplotlib (behavioral simulation), and LibreLane~\cite{LibreLane2024}
+(OpenLane~2 lineage~\cite{OpenLane2024}) for digital place-and-route. The author
+thanks the open-source EDA community for publicly accessible PDKs and tools.
 
 \printcredits
-
 \bibliographystyle{cas-model2-names}
 \bibliography{report}
 
