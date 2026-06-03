@@ -1,0 +1,22 @@
+* NGSPICE file created from fgmos_rtl_cell.ext - technology: sky130A
+
+.subckt fgmos_rtl_cell B D S G C2 C1
+X0 S G D B sky130_fd_pr__nfet_01v8 ad=0.58 pd=4.58 as=0.58 ps=4.58 w=2 l=0.15
+X1 C1 C2 sky130_fd_pr__cap_mim_m3_1 l=2 w=2
+C0 D C2 0.05908f
+C1 G D 0.04812f
+C2 S C2 0.06086f
+C3 S m2_4_7# 0.0151f
+C4 S G 0.05507f
+C5 m2_4_7# C2 0.01484f
+C6 G C2 0.02461f
+C7 C1 C2 0.50149f
+C8 S D 0.33005f
+C9 C1 B 0.1712f
+C10 C2 B 0.82898f
+C11 S B 0.22889f
+C12 D B 0.22882f
+C13 G B 0.32938f
+C14 m2_4_7# B 0.01316f $ **FLOATING
+.ends
+

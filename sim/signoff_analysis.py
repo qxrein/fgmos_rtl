@@ -219,28 +219,55 @@ def _mismatch_mc(n: int = 500, seed: int = 42) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
+def _load_postlayout_summary() -> dict | None:
+    p = DATA / "postlayout_signoff_summary.csv"
+    if not p.is_file():
+        return None
+    row = pd.read_csv(p).iloc[0].to_dict()
+    return row
+
+
 def _write_tables(
     delay_df: pd.DataFrame,
     pvt_df: pd.DataFrame,
     compare: dict,
     ll_meta: dict,
     mc_df: pd.DataFrame,
+    postlayout: dict | None = None,
 ) -> None:
     TBL.mkdir(parents=True, exist_ok=True)
 
     with open(TBL / "table_signoff_delay_energy.tex", "w") as f:
         f.write("\\begin{table}[ht]\n\\centering\n")
-        f.write("\\caption{Cell-level delay and energy per evaluation (behavioral ohmic model, ")
-        f.write("$C_L=80$\\,fF, $V_{\\mathrm{CC}}=1.8$\\,V).}\n")
+        f.write("\\caption{Cell-level delay and energy (schematic behavioral model vs.\\ post-layout ")
+        f.write("ngspice on Magic-extracted netlist, Sky130 TT BSIM, $C_L=80$\\,fF).}\n")
         f.write("\\label{tbl:delay_energy}\n")
-        f.write("\\begin{tabular}{@{}lcccc@{}}\n\\toprule\n")
-        f.write("Mode & $R_{\\mathrm{eff}}$ (k$\\Omega$) & $\\tau$ (ps) & $t_{90}$ (ps) & $E_{\\mathrm{eval}}$ (fJ) \\\\\n")
-        f.write("\\midrule\n")
-        for _, r in delay_df.iterrows():
+        if postlayout:
+            f.write("\\begin{tabular}{@{}lccccc@{}}\n\\toprule\n")
+            f.write("Mode & $R_{\\mathrm{eff}}$ (k$\\Omega$) & $\\tau$ (ps) & $t_{90}$ (ps) & ")
+            f.write("$E_{\\mathrm{eval}}$ (fJ) & Source \\\\\n\\midrule\n")
+            for _, r in delay_df.iterrows():
+                f.write(
+                    f"{r['mode']} & {r['R_eff_kOhm']} & {r['tau_ps']} & {r['t_90_ps']} & "
+                    f"{r['E_eval_fJ']} & schematic \\\\\n"
+                )
+            f.write("\\midrule\n")
             f.write(
-                f"{r['mode']} & {r['R_eff_kOhm']} & {r['tau_ps']} & {r['t_90_ps']} & {r['E_eval_fJ']} \\\\\n"
+                f"Pull-up (NOR band) & {postlayout.get('R_eff_kOhm', '---')} & "
+                f"{postlayout.get('tau_ps', '---')} & {postlayout.get('t_90_ps', '---')} & "
+                f"{postlayout.get('E_eval_fJ', '---')} & post-layout \\\\\n"
             )
-        f.write("\\bottomrule\n\\end{tabular}\n\\end{table}\n")
+            f.write("\\bottomrule\n\\end{tabular}\n\\end{table}\n")
+        else:
+            f.write("\\begin{tabular}{@{}lcccc@{}}\n\\toprule\n")
+            f.write("Mode & $R_{\\mathrm{eff}}$ (k$\\Omega$) & $\\tau$ (ps) & $t_{90}$ (ps) & ")
+            f.write("$E_{\\mathrm{eval}}$ (fJ) \\\\\n\\midrule\n")
+            for _, r in delay_df.iterrows():
+                f.write(
+                    f"{r['mode']} & {r['R_eff_kOhm']} & {r['tau_ps']} & {r['t_90_ps']} & "
+                    f"{r['E_eval_fJ']} \\\\\n"
+                )
+            f.write("\\bottomrule\n\\end{tabular}\n\\end{table}\n")
 
     with open(TBL / "table_pvt_sta.tex", "w") as f:
         f.write("\\begin{table}[ht]\n\\centering\n")
@@ -447,14 +474,29 @@ def run() -> bool:
             [{"corner": k, "setup_ws_ns": None, "hold_ws_ns": None} for k in PVT_CORNERS]
         )
 
+    postlayout_ok = False
+    postlayout_row = None
+    try:
+        from postlayout_signoff import run as run_postlayout
+
+        postlayout_ok = run_postlayout()
+        postlayout_row = _load_postlayout_summary()
+    except Exception as exc:
+        print(f"  Post-layout sign-off skipped: {exc}")
+
     compare = _cmos_baseline()
-    _write_tables(delay_df, pvt_sta_df, compare, ll_meta, mc_df)
+    _write_tables(delay_df, pvt_sta_df, compare, ll_meta, mc_df, postlayout_row)
     _plot_pvt(delay_df, pvt_cell_df)
     _plot_mismatch(mc_df)
 
     print("  Sign-off: fig9/fig10 updated (B&W); tables in tables/")
     print(f"  Mismatch logic OK: {mc_df['logic_ok'].mean()*100:.1f}%")
-    return bool(mc_df["logic_ok"].mean() > 0.85)
+    if postlayout_row:
+        print(
+            f"  Post-layout ngspice: R_eff ratio {postlayout_row.get('Reff_ratio', 'n/a')}×, "
+            f"τ≈{postlayout_row.get('tau_ps', 'n/a')} ps"
+        )
+    return bool(mc_df["logic_ok"].mean() > 0.85) and (postlayout_ok or postlayout_row is None)
 
 
 if __name__ == "__main__":

@@ -17,9 +17,9 @@ Scaled tech values by 2 / 1 to match internal grid scaling
 Loading sky130A Device Generator Menu ...
 Using technology "sky130A", version 1.0.529-3-g8afc834
 Cell fgmos_rtl_cell read from current working directory
-Scaled magic input cell fgmos_rtl_cell geometry by factor of 2
-"fgmos_rtl_cell" has a zero timestamp; it should be written out
-    to establish a correct timestamp.
 Total DRC errors found: 0
-Warning:  There is nothing here to extract.
+Extracting fgmos_rtl_cell into fgmos_rtl_cell.ext:
+Processing fgmos_rtl_cell
+The box isn't in a window on the edit cell.
+exttospice finished.
 INFO: wrote export/fgmos_rtl_cell_extracted.spice

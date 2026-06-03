@@ -24,7 +24,17 @@ from claim2_logic import run as r2; c2 = r2()
 print("\n[Claim 3] p-bit Monte Carlo")
 from claim3_pbit import run as r3; c3 = r3()
 
-print("\n[Sign-off] PVT, mismatch, delay/energy/area")
+print("\n[Layout] Magic macro + extract (if PDK_ROOT set)")
+import subprocess
+if os.environ.get("PDK_ROOT"):
+    subprocess.run(["make", "-C", os.path.join(ROOT, "layout"), "magic", "magic-extract"],
+                   check=False, env=os.environ.copy())
+    subprocess.run(["bash", os.path.join(ROOT, "layout/klayout/run_drc.sh")],
+                   check=False, env=os.environ.copy())
+else:
+    print("  (skip layout: set PDK_ROOT for post-layout ngspice)")
+
+print("\n[Sign-off] PVT, mismatch, delay/energy/area (+ post-layout ngspice)")
 from signoff_analysis import run as r4; c4 = r4()
 
 print("\n" + "="*55)
@@ -33,7 +43,7 @@ print("="*55)
 print(f"  {'✅' if c1 else '❌'} Claim 1: R_eff spans >10x via Vfg")
 print(f"  {'✅' if c2 else '❌'} Claim 2: NOR / MAJ / AND all found")
 print(f"  {'✅' if c3 else '❌'} Claim 3: sigmoid + randomness confirmed")
-print(f"  {'✅' if c4 else '❌'} Sign-off: PVT/mismatch/delay/energy tables")
+print(f"  {'✅' if c4 else '❌'} Sign-off: PVT/mismatch/delay/energy (+ post-layout if extracted)")
 print(f"  ✅  Ohmic constraint checked in every Vout_rtl call")
 print(f"  ✅  All caps within Sky130 MIM range (1fF–100fF)")
 

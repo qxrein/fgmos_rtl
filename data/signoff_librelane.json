@@ -4,6 +4,6 @@
   "placed_um2": 232536,
   "power_w": 6.677128840237856e-05,
   "instances": 66233,
-  "metrics_path": "/Users/rein/projects/fgmos_rtl/layout/librelane/fgmos_rtl_wrapper/runs/RUN_2026-06-01_23-40-07/final/metrics.json",
-  "extracted_spice": "/Users/rein/projects/fgmos_rtl/layout/librelane/fgmos_rtl_wrapper/runs/RUN_2026-06-01_23-40-07/final/spice/fgmos_rtl_wrapper.spice"
+  "metrics_path": "/home/sneha/fgmos_rtl/layout/librelane/fgmos_rtl_wrapper/runs/RUN_2026-06-01_23-40-07/final/metrics.json",
+  "extracted_spice": "/home/sneha/fgmos_rtl/layout/librelane/fgmos_rtl_wrapper/runs/RUN_2026-06-01_23-40-07/final/spice/fgmos_rtl_wrapper.spice"
 }

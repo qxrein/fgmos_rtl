@@ -27,11 +27,12 @@ drc count total
 
 extract all
 ext2spice lvs
-ext2spice cthresh 0 rthresh 0
+ext2spice cthresh 0.01 rthresh 0.01
 ext2spice subcircuit on
 ext2spice hierarchy on
 ext2spice renumber off
 ext2spice format ngspice
+port makeall
 ext2spice -o export/fgmos_rtl_cell_extracted.spice
 
 save fgmos_rtl_cell

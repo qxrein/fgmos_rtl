@@ -1,16 +1,18 @@
 \begin{table}[ht]
 \centering
-\caption{Cell-level delay and energy per evaluation (behavioral ohmic model, $C_L=80$\,fF, $V_{\mathrm{CC}}=1.8$\,V).}
+\caption{Cell-level delay and energy (schematic behavioral model vs.\ post-layout ngspice on Magic-extracted netlist, Sky130 TT BSIM, $C_L=80$\,fF).}
 \label{tbl:delay_energy}
-\begin{tabular}{@{}lcccc@{}}
+\begin{tabular}{@{}lccccc@{}}
 \toprule
-Mode & $R_{\mathrm{eff}}$ (k$\Omega$) & $\tau$ (ps) & $t_{90}$ (ps) & $E_{\mathrm{eval}}$ (fJ) \\
+Mode & $R_{\mathrm{eff}}$ (k$\Omega$) & $\tau$ (ps) & $t_{90}$ (ps) & $E_{\mathrm{eval}}$ (fJ) & Source \\
 \midrule
-NOR & 1.27 & 102.0 & 234.0 & 356.4 \\
-MAJ & 1.07 & 85.0 & 197.0 & 356.4 \\
-AND & 0.92 & 74.0 & 169.0 & 356.4 \\
-P-bit & 1.24 & 100.0 & 229.0 & 356.4 \\
-Conv. RTL (10 kΩ) & 10.0 & 800.0 & 1840.0 & 259.2 \\
+NOR & 1.27 & 102.0 & 234.0 & 356.4 & schematic \\
+MAJ & 1.07 & 85.0 & 197.0 & 356.4 & schematic \\
+AND & 0.92 & 74.0 & 169.0 & 356.4 & schematic \\
+P-bit & 1.24 & 100.0 & 229.0 & 356.4 & schematic \\
+Conv. RTL (10 kΩ) & 10.0 & 800.0 & 1840.0 & 259.2 & schematic \\
+\midrule
+Pull-up (NOR band) & 2.09 & 168.0 & 385.0 & 259.2 & post-layout \\
 \bottomrule
 \end{tabular}
 \end{table}

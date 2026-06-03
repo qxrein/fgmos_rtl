@@ -1,54 +1,47 @@
-# Sky130 layout: Magic cell + OpenLane digital wrapper
+# Sky130 layout: Magic cell + KLayout DRC + ngspice post-layout
 
-Analog **FGMOS–RTL** core in Magic; **pad frame + GPIO harness** in LibreLane (`~/projects/librelane`).
+Analog **FGMOS–RTL** macro in Magic; **pad frame + GPIO harness** in LibreLane.
 
 ## Prerequisites
 
 | Tool | Purpose |
 |------|---------|
 | [sky130A PDK](https://github.com/google/skywater-pdk) | `PDK_ROOT`, Magic tech `sky130A` |
-| [Magic](http://opencircuitdesign.com/magic/) | Custom cell layout, DRC, GDS export |
-| [LibreLane](https://github.com/librelane/librelane) | Digital wrapper, STA, Magic/Netgen extraction |
-| Python `gdstk` | Render merged GDS for paper figure |
+| [Magic](http://opencircuitdesign.com/magic/) | Custom cell layout, extraction |
+| [KLayout](https://www.klayout.de/) | Batch DRC on exported GDS |
+| [ngspice](https://ngspice.sourceforge.io/) | Post-layout BSIM simulation |
+| [LibreLane](https://github.com/librelane/librelane) | Digital wrapper, STA |
 
 ```bash
 export PDK_ROOT=$HOME/share/pdk
 export PDK=sky130A
-export STD_CELL_LIBRARY=sky130_fd_sc_hd
+source layout/setup_pdk.sh
+```
+
+## Post-layout simulation flow (no silicon required)
+
+```bash
+make -C layout magic          # automated macro layout → export/fgmos_rtl_cell.gds
+make -C layout magic-extract  # Magic RC extract → export/fgmos_rtl_cell_extracted.spice
+make -C layout klayout-drc    # KLayout DRC report → data/klayout_drc_fgmos.txt
+cd .. && python sim/postlayout_signoff.py   # ngspice R_eff sweep → data/postlayout_*.csv
+python sim/signoff_analysis.py              # updates tables/table_signoff_delay_energy.tex
 ```
 
 ## Paper figure (OpenLane fabrication view)
 
 ```bash
-cd /path/to/fgmos_rtl
-./env/bin/pip install gdstk
 make -C layout openlane-figure
 ```
 
-Output: `figures/fig8_openlane_fabric.pdf` (used in `article.tex`).
-
-After a real OpenLane run, point to merged GDS:
-
-```bash
-export OPENLANE_GDS=layout/openlane/runs/<RUN_ID>/final/gds/design.gds
-make -C layout openlane-figure
-```
-
-## Flow
-
-```bash
-make -C layout magic              # Magic → export/fgmos_rtl_cell.gds
-make -C layout openlane-prepare   # copy GDS/LEF → macros/
-layout/openlane/run_openlane.sh   # OpenLane 2
-make -C layout openlane-figure    # render merged GDS for paper
-```
+Output: `figures/fig8_openlane_fabric.pdf`.
 
 ## Directory map
 
 ```
 layout/
-├── magic/
-├── openlane/fgmos_rtl_wrapper/
-├── scripts/render_openlane_figure.py
-└── xschem/
+├── magic/           # fgmos_rtl_cell layout + extract scripts
+├── klayout/         # run_drc.sh
+├── openlane/        # digital wrapper
+└── librelane/
 ```

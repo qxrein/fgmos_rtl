@@ -17,16 +17,38 @@ Scaled tech values by 2 / 1 to match internal grid scaling
 Loading sky130A Device Generator Menu ...
 Using technology "sky130A", version 1.0.529-3-g8afc834
 Grid scaling is finer than limit set by the process!
-Cell fgmos_rtl_cell couldn't be read
-No such file or directory
-Creating new cell
-Root cell box:
-           width x height  (   llx,  lly  ), (   urx,  ury  )  area (units^2)
-
-microns:  140.000 x 100.000  ( 0.000,  0.000), ( 140.000,  100.000)  14000.000 
-lambda:   14000.00 x 10000.00  (  0.00,  0.00 ), ( 14000.00,  10000.00)  140000000.00
-internal:  28000 x 20000   (     0,  0    ), ( 28000,  20000)  560000000 
-INFO: Created/loaded fgmos_rtl_cell guide canvas.
-INFO: Place sky130_fd_pr__nfet_01v8 and MIM caps manually in Magic GUI.
-INFO: Then rerun extraction with ./run_magic_extract.sh.
+Cell fgmos_rtl_cell read from current working directory
+Warning:  snap setting is also changing units.  This usage is deprecated
+and may be removed in the future.  Use "units" to change units, and
+change units before setting snap to keep this message from appearing.
+Diagnostic: Device bounding box e -0.36499999184161425 -1.4399999678134918 0.36499999184161425 1.4399999678134918 (um)
+Moving label "B" from psubdiff to psubdiffcont in cell fgmos_rtl_cell.
+Diagnostic: Device bounding box e -0.36499999184161425 -1.4399999678134918 0.36499999184161425 1.4399999678134918 (um)
+Moving label "B" from psubdiff to psubdiffcont in cell fgmos_rtl_cell.
+Diagnostic: Device bounding box e -0.36499999184161425 -1.4399999678134918 0.36499999184161425 1.4399999678134918 (um)
+Moving label "B" from psubdiff to psubdiffcont in cell fgmos_rtl_cell.
+Diagnostic: Device bounding box e -0.36499999184161425 -1.4399999678134918 0.36499999184161425 1.4399999678134918 (um)
+Moving label "B" from psubdiff to psubdiffcont in cell fgmos_rtl_cell.
+Moving label "C2" from metal3 to via3 in cell fgmos_rtl_cell.
+Moving label "C1" from metal4 to mimcapcontact in cell fgmos_rtl_cell.
+Moving label "C2" from metal3 to via3 in cell fgmos_rtl_cell.
+Moving label "C1" from metal4 to mimcapcontact in cell fgmos_rtl_cell.
+Moving label "C2" from metal3 to via3 in cell fgmos_rtl_cell.
+Moving label "C1" from metal4 to mimcapcontact in cell fgmos_rtl_cell.
+Moving label "C2" from metal3 to via3 in cell fgmos_rtl_cell.
+Moving label "C1" from metal4 to mimcapcontact in cell fgmos_rtl_cell.
+Moving label "C2" from metal3 to via3 in cell fgmos_rtl_cell.
+Moving label "C1" from metal4 to mimcapcontact in cell fgmos_rtl_cell.
+Substrate tap height must be at least 0.17um
+Unknown vector outline font "metal2"
+Unknown vector outline font "metal1"
+Unknown vector outline font "metal3"
+Unknown vector outline font "metal1"
+Unknown vector outline font "metal1"
+Unknown vector outline font "metal1"
+Unknown vector outline font "metal3"
+Unknown vector outline font "metal2"
    Generating output for cell fgmos_rtl_cell
+Loading DRC CIF style.
+INFO: DRC violations: {fgmos_rtl_cell 13}
+INFO: Wrote export/fgmos_rtl_cell.gds

@@ -5,7 +5,7 @@ CAS_FIG := $(ROOT)/els-cas-templates/figures
 PDK ?= sky130A
 PYTHON := $(abspath ../env/bin/python)
 
-.PHONY: all openlane-figure magic magic-extract openlane-prepare clean
+.PHONY: all openlane-figure magic magic-extract klayout-drc openlane-prepare clean
 
 all: openlane-figure
 
@@ -20,9 +20,12 @@ magic:
 	@test -n "$$PDK_ROOT" || (echo "Set PDK_ROOT to sky130A install" && exit 1)
 	cd magic && ./run_magic_layout.sh
 
-magic-extract:
+magic-extract: magic
 	@test -n "$$PDK_ROOT" || (echo "Set PDK_ROOT to sky130A install" && exit 1)
 	cd magic && ./run_magic_extract.sh
+
+klayout-drc: magic
+	bash klayout/run_drc.sh
 
 openlane-prepare: magic
 	@mkdir -p openlane/fgmos_rtl_wrapper/macros

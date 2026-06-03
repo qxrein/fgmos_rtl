@@ -1,0 +1,2 @@
+source,tau_ps,t_90_ps,E_eval_fJ,R_eff_kOhm,Reff_ratio
+post-layout (ngspice+extract),168.0,385.0,259.2,2.09,938.1
