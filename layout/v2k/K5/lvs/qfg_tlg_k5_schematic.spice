@@ -1,0 +1,18 @@
+
+.subckt qfg_tlg_k5 I0 I1 I2 I3 I4 RST VB Y YB FG VDD VSS
+XMP  YB FG VDD VDD sky130_fd_pr__pfet_01v8 W=32.0 L=0.15
+XMNI0 YB I0 VSS VSS sky130_fd_pr__nfet_01v8 W=0.42 L=0.15
+XMNI1 YB I1 VSS VSS sky130_fd_pr__nfet_01v8 W=0.42 L=0.15
+XMNI2 YB I2 VSS VSS sky130_fd_pr__nfet_01v8 W=0.42 L=0.15
+XMNI3 YB I3 VSS VSS sky130_fd_pr__nfet_01v8 W=0.42 L=0.15
+XMNI4 YB I4 VSS VSS sky130_fd_pr__nfet_01v8 W=0.42 L=0.15
+XCI0 FG I0 sky130_fd_pr__cap_mim_m3_1 W=2.0 L=2.0 MF=1
+XCI1 FG I1 sky130_fd_pr__cap_mim_m3_1 W=2.0 L=2.0 MF=1
+XCI2 FG I2 sky130_fd_pr__cap_mim_m3_1 W=2.0 L=2.0 MF=1
+XCI3 FG I3 sky130_fd_pr__cap_mim_m3_1 W=2.0 L=2.0 MF=1
+XCI4 FG I4 sky130_fd_pr__cap_mim_m3_1 W=2.0 L=2.0 MF=1
+XCBL FG VSS sky130_fd_pr__cap_mim_m3_1 W=9.2 L=2.0 MF=1
+XMR  FG RST VB VSS sky130_fd_pr__nfet_01v8 W=0.42 L=0.5
+XIP  Y  YB VDD VDD sky130_fd_pr__pfet_01v8 W=1.0 L=0.15
+XIN  Y  YB VSS VSS sky130_fd_pr__nfet_01v8 W=0.42 L=0.15
+.ends qfg_tlg_k5

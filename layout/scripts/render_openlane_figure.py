@@ -120,24 +120,31 @@ def _write_preview_gds(path: Path) -> Path:
     return path
 
 
-def _polygons_from_gds(gds_path: Path) -> list[tuple[int, int, np.ndarray]]:
+def _polygons_from_gds(gds_path: Path) -> tuple[list[tuple[int, int, np.ndarray]], float]:
+    """Return polygon list and a scale factor to convert coordinates to µm."""
     import gdstk
 
     lib = gdstk.read_gds(str(gds_path))
     top = lib.top_level()[0] if lib.top_level() else lib.cells[0]
+
+    # gdstk returns coordinates in library units.
+    # Determine the scale so that 1 plot-unit = 1 µm:
+    #   lib.unit is metres-per-user-unit (e.g. 1e-6 for µm-native, 1e-9 for nm-native)
+    scale_to_um = lib.unit / 1e-6  # = 1.0 if unit is µm, 0.001 if unit is nm
+
     out: list[tuple[int, int, np.ndarray]] = []
     for poly in top.get_polygons():
         layer = poly.layer
         if layer not in FIG_LAYERS:
             continue
-        pts = np.asarray(poly.points) * 1e6  # m → µm for plot
+        pts = np.asarray(poly.points) * scale_to_um   # now in µm
         if len(pts) >= 3:
             out.append((layer, poly.datatype, pts))
     if len(out) > MAX_POLYGONS:
         rng = np.random.default_rng(0)
         idx = rng.choice(len(out), size=MAX_POLYGONS, replace=False)
         out = [out[i] for i in sorted(idx)]
-    return out
+    return out, scale_to_um
 
 
 def _layer_color(layer: int) -> str:
@@ -152,7 +159,7 @@ def _layer_color(layer: int) -> str:
 
 
 def render(gds_path: Path, source_note: str) -> None:
-    polys = _polygons_from_gds(gds_path)
+    polys, _scale = _polygons_from_gds(gds_path)
     if not polys:
         raise RuntimeError(f"No polygons in {gds_path}")
 

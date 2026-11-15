@@ -173,9 +173,20 @@ def _reff_from_csv(csv: Path) -> pd.DataFrame:
     return pd.DataFrame({"Vfg_V": vfg, "Vout_V": vout, "Ids_A": ids, "Reff_ohm": reff})
 
 
-def _tau_energy_from_reff(reff_ohm: float, cl_f: float, vcc: float = 1.8) -> dict:
+def _tau_energy_from_reff(
+    reff_ohm: float,
+    cl_f: float,
+    ct_intentional_f: float = 30e-15,
+    ct_parasitic_f: float = 0.0,
+    vcc: float = 1.8,
+) -> dict:
+    # tau is set by the output load only (CL on the output node).
     tau_s = reff_ohm * cl_f
-    e_j = cl_f * vcc * vcc
+    # Energy charges both the output node (CL) AND the floating-gate network
+    # (intentional coupling caps CT_intentional + extracted parasitics CT_parasitic).
+    # This matches the schematic formula E = (CT + CL) * Vcc^2.
+    c_total = ct_intentional_f + ct_parasitic_f + cl_f
+    e_j = c_total * vcc * vcc
     return {
         "tau_ps": round(tau_s * 1e12, 0),
         "t_90_ps": round(2.3 * tau_s * 1e12, 0),
@@ -213,8 +224,12 @@ def run() -> bool:
     rmin, rmax = float(valid.min()), float(valid.max())
     ratio = rmax / rmin
     mid = valid.median()
-    cl = 80e-15 + max(0.0, ct - 30e-15)  # schematic CL + extra layout cap
-    metrics = _tau_energy_from_reff(mid, cl)
+    # tau uses output load CL only; energy uses CT_intentional + CT_parasitic + CL
+    cl = 80e-15           # output load capacitance (fixed)
+    ct_intentional = 40e-15  # full FG node: C1+C2+C3+Cfg+Csb+Cdb = 40 fF
+    metrics = _tau_energy_from_reff(
+        mid, cl, ct_intentional_f=ct_intentional, ct_parasitic_f=ct
+    )
     metrics["Reff_ratio"] = round(ratio, 1)
 
     summary = pd.DataFrame([{"source": "post-layout (ngspice+extract)", **metrics}])

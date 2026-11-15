@@ -1,0 +1,26 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1794421339
+<< checkpaint >>
+rect -1313 -1313 1925 2445
+rect 4687 -1313 7629 1711
+rect 10740 -1260 14092 1740
+rect 16740 -1260 20662 2310
+use sky130_fd_pr__cap_mim_m3_1_4V3HYR  XC
+timestamp 1794421339
+transform 1 0 12416 0 1 240
+box -416 -240 416 240
+use sky130_fd_pr__cap_mim_m3_1_PJSXF3  XCB
+timestamp 1794421339
+transform 1 0 18701 0 1 525
+box -701 -525 701 525
+use sky130_fd_pr__nfet_01v8_JMR3KB  XMN
+timestamp 1794421339
+transform 1 0 6158 0 1 199
+box -211 -252 211 252
+use sky130_fd_pr__pfet_01v8_5QMY5D  XMP
+timestamp 1794421339
+transform 1 0 306 0 1 566
+box -359 -619 359 619
+<< end >>

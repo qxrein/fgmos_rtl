@@ -1,0 +1,121 @@
+n,graph,g,reference,opt,model,sweeps,ratio_mean,ratio_best,p_success
+20,"G(n,0.5)",0,exact,60.0,ideal,100,1.0,1.0,1.0
+20,"G(n,0.5)",0,exact,60.0,ideal,1000,1.0,1.0,1.0
+20,"G(n,0.5)",0,exact,60.0,QFG cell (mismatch),100,1.0,1.0,1.0
+20,"G(n,0.5)",0,exact,60.0,QFG cell (mismatch),1000,1.0,1.0,1.0
+20,"G(n,0.5)",0,exact,60.0,QFG cell (trimmed),100,0.995,1.0,0.9
+20,"G(n,0.5)",0,exact,60.0,QFG cell (trimmed),1000,1.0,1.0,1.0
+20,"G(n,0.5)",1,exact,61.0,ideal,100,1.0,1.0,1.0
+20,"G(n,0.5)",1,exact,61.0,ideal,1000,1.0,1.0,1.0
+20,"G(n,0.5)",1,exact,61.0,QFG cell (mismatch),100,1.0,1.0,1.0
+20,"G(n,0.5)",1,exact,61.0,QFG cell (mismatch),1000,1.0,1.0,1.0
+20,"G(n,0.5)",1,exact,61.0,QFG cell (trimmed),100,1.0,1.0,1.0
+20,"G(n,0.5)",1,exact,61.0,QFG cell (trimmed),1000,1.0,1.0,1.0
+20,"G(n,0.5)",2,exact,71.0,ideal,100,1.0,1.0,1.0
+20,"G(n,0.5)",2,exact,71.0,ideal,1000,1.0,1.0,1.0
+20,"G(n,0.5)",2,exact,71.0,QFG cell (mismatch),100,1.0,1.0,1.0
+20,"G(n,0.5)",2,exact,71.0,QFG cell (mismatch),1000,1.0,1.0,1.0
+20,"G(n,0.5)",2,exact,71.0,QFG cell (trimmed),100,1.0,1.0,1.0
+20,"G(n,0.5)",2,exact,71.0,QFG cell (trimmed),1000,1.0,1.0,1.0
+20,"G(n,0.5)",3,exact,61.0,ideal,100,0.9918032786885246,1.0,0.6
+20,"G(n,0.5)",3,exact,61.0,ideal,1000,1.0,1.0,1.0
+20,"G(n,0.5)",3,exact,61.0,QFG cell (mismatch),100,0.9918032786885246,1.0,0.6
+20,"G(n,0.5)",3,exact,61.0,QFG cell (mismatch),1000,1.0,1.0,1.0
+20,"G(n,0.5)",3,exact,61.0,QFG cell (trimmed),100,0.9950819672131148,1.0,0.7
+20,"G(n,0.5)",3,exact,61.0,QFG cell (trimmed),1000,1.0,1.0,1.0
+20,"G(n,0.5)",4,exact,63.0,ideal,100,1.0,1.0,1.0
+20,"G(n,0.5)",4,exact,63.0,ideal,1000,1.0,1.0,1.0
+20,"G(n,0.5)",4,exact,63.0,QFG cell (mismatch),100,1.0,1.0,1.0
+20,"G(n,0.5)",4,exact,63.0,QFG cell (mismatch),1000,1.0,1.0,1.0
+20,"G(n,0.5)",4,exact,63.0,QFG cell (trimmed),100,1.0,1.0,1.0
+20,"G(n,0.5)",4,exact,63.0,QFG cell (trimmed),1000,1.0,1.0,1.0
+20,3-regular,0,exact,26.0,ideal,100,0.9884615384615384,1.0,0.7
+20,3-regular,0,exact,26.0,ideal,1000,1.0,1.0,1.0
+20,3-regular,0,exact,26.0,QFG cell (mismatch),100,1.0,1.0,1.0
+20,3-regular,0,exact,26.0,QFG cell (mismatch),1000,1.0,1.0,1.0
+20,3-regular,0,exact,26.0,QFG cell (trimmed),100,0.9923076923076923,1.0,0.8
+20,3-regular,0,exact,26.0,QFG cell (trimmed),1000,1.0,1.0,1.0
+20,3-regular,1,exact,26.0,ideal,100,1.0,1.0,1.0
+20,3-regular,1,exact,26.0,ideal,1000,1.0,1.0,1.0
+20,3-regular,1,exact,26.0,QFG cell (mismatch),100,0.9961538461538461,1.0,0.9
+20,3-regular,1,exact,26.0,QFG cell (mismatch),1000,1.0,1.0,1.0
+20,3-regular,1,exact,26.0,QFG cell (trimmed),100,1.0,1.0,1.0
+20,3-regular,1,exact,26.0,QFG cell (trimmed),1000,1.0,1.0,1.0
+20,3-regular,2,exact,26.0,ideal,100,0.9884615384615384,1.0,0.7
+20,3-regular,2,exact,26.0,ideal,1000,1.0,1.0,1.0
+20,3-regular,2,exact,26.0,QFG cell (mismatch),100,0.9846153846153847,1.0,0.6
+20,3-regular,2,exact,26.0,QFG cell (mismatch),1000,1.0,1.0,1.0
+20,3-regular,2,exact,26.0,QFG cell (trimmed),100,0.9923076923076923,1.0,0.8
+20,3-regular,2,exact,26.0,QFG cell (trimmed),1000,1.0,1.0,1.0
+20,3-regular,3,exact,26.0,ideal,100,1.0,1.0,1.0
+20,3-regular,3,exact,26.0,ideal,1000,1.0,1.0,1.0
+20,3-regular,3,exact,26.0,QFG cell (mismatch),100,0.9961538461538461,1.0,0.9
+20,3-regular,3,exact,26.0,QFG cell (mismatch),1000,1.0,1.0,1.0
+20,3-regular,3,exact,26.0,QFG cell (trimmed),100,1.0,1.0,1.0
+20,3-regular,3,exact,26.0,QFG cell (trimmed),1000,1.0,1.0,1.0
+20,3-regular,4,exact,26.0,ideal,100,0.9961538461538461,1.0,0.9
+20,3-regular,4,exact,26.0,ideal,1000,1.0,1.0,1.0
+20,3-regular,4,exact,26.0,QFG cell (mismatch),100,0.9923076923076923,1.0,0.8
+20,3-regular,4,exact,26.0,QFG cell (mismatch),1000,1.0,1.0,1.0
+20,3-regular,4,exact,26.0,QFG cell (trimmed),100,0.9923076923076923,1.0,0.8
+20,3-regular,4,exact,26.0,QFG cell (trimmed),1000,1.0,1.0,1.0
+64,"G(n,0.5)",0,SA,605.0,ideal,100,0.9990082644628099,1.0,0.8
+64,"G(n,0.5)",0,SA,605.0,ideal,1000,0.999504132231405,1.0,0.9
+64,"G(n,0.5)",0,SA,605.0,QFG cell (mismatch),100,0.9952066115702479,1.0,0.7
+64,"G(n,0.5)",0,SA,605.0,QFG cell (mismatch),1000,0.999504132231405,1.0,0.9
+64,"G(n,0.5)",0,SA,605.0,QFG cell (trimmed),100,0.9986776859504133,1.0,0.8
+64,"G(n,0.5)",0,SA,605.0,QFG cell (trimmed),1000,1.0,1.0,1.0
+64,"G(n,0.5)",1,SA,608.0,ideal,100,0.9973684210526316,1.0,0.3
+64,"G(n,0.5)",1,SA,608.0,ideal,1000,0.9985197368421053,1.0,0.3
+64,"G(n,0.5)",1,SA,608.0,QFG cell (mismatch),100,0.9957236842105263,1.0,0.1
+64,"G(n,0.5)",1,SA,608.0,QFG cell (mismatch),1000,0.9981907894736842,1.0,0.2
+64,"G(n,0.5)",1,SA,608.0,QFG cell (trimmed),100,0.9957236842105263,0.9983552631578947,0.0
+64,"G(n,0.5)",1,SA,608.0,QFG cell (trimmed),1000,0.9991776315789473,1.0,0.6
+64,"G(n,0.5)",2,SA,606.0,ideal,100,0.9958745874587459,1.0,0.2
+64,"G(n,0.5)",2,SA,606.0,ideal,1000,0.9986798679867988,1.0,0.8
+64,"G(n,0.5)",2,SA,606.0,QFG cell (mismatch),100,0.9955445544554454,1.0,0.1
+64,"G(n,0.5)",2,SA,606.0,QFG cell (mismatch),1000,0.9980198019801979,1.0,0.7
+64,"G(n,0.5)",2,SA,606.0,QFG cell (trimmed),100,0.9943894389438944,1.0,0.1
+64,"G(n,0.5)",2,SA,606.0,QFG cell (trimmed),1000,0.9968646864686469,1.0,0.5
+64,"G(n,0.5)",3,SA,594.0,ideal,100,0.9951178451178452,1.0,0.2
+64,"G(n,0.5)",3,SA,594.0,ideal,1000,0.998989898989899,1.0,0.6
+64,"G(n,0.5)",3,SA,594.0,QFG cell (mismatch),100,0.9947811447811448,1.0,0.1
+64,"G(n,0.5)",3,SA,594.0,QFG cell (mismatch),1000,0.9984848484848485,1.0,0.5
+64,"G(n,0.5)",3,SA,594.0,QFG cell (trimmed),100,0.995959595959596,1.0,0.2
+64,"G(n,0.5)",3,SA,594.0,QFG cell (trimmed),1000,0.9969696969696971,1.0,0.3
+64,"G(n,0.5)",4,SA,587.0,ideal,100,0.995741056218058,1.0,0.5
+64,"G(n,0.5)",4,SA,587.0,ideal,1000,0.9996592844974446,1.0,0.9
+64,"G(n,0.5)",4,SA,587.0,QFG cell (mismatch),100,0.9933560477001704,1.0,0.2
+64,"G(n,0.5)",4,SA,587.0,QFG cell (mismatch),1000,0.9984667802385009,1.0,0.6
+64,"G(n,0.5)",4,SA,587.0,QFG cell (trimmed),100,0.9943781942078366,1.0,0.3
+64,"G(n,0.5)",4,SA,587.0,QFG cell (trimmed),1000,0.9996592844974446,1.0,0.9
+64,3-regular,0,SA,86.0,ideal,100,0.9895348837209301,1.0,0.3
+64,3-regular,0,SA,86.0,ideal,1000,1.0,1.0,1.0
+64,3-regular,0,SA,86.0,QFG cell (mismatch),100,0.9825581395348837,1.0,0.3
+64,3-regular,0,SA,86.0,QFG cell (mismatch),1000,0.9988372093023257,1.0,0.9
+64,3-regular,0,SA,86.0,QFG cell (trimmed),100,0.9720930232558139,0.9883720930232558,0.0
+64,3-regular,0,SA,86.0,QFG cell (trimmed),1000,0.9976744186046511,1.0,0.8
+64,3-regular,1,SA,88.0,ideal,100,0.9852272727272727,1.0,0.4
+64,3-regular,1,SA,88.0,ideal,1000,0.9988636363636364,1.0,0.9
+64,3-regular,1,SA,88.0,QFG cell (mismatch),100,0.9761363636363637,1.0,0.3
+64,3-regular,1,SA,88.0,QFG cell (mismatch),1000,0.9988636363636364,1.0,0.9
+64,3-regular,1,SA,88.0,QFG cell (trimmed),100,0.9806818181818181,1.0,0.4
+64,3-regular,1,SA,88.0,QFG cell (trimmed),1000,1.0,1.0,1.0
+64,3-regular,2,SA,86.0,ideal,100,0.9860465116279069,1.0,0.2
+64,3-regular,2,SA,86.0,ideal,1000,0.9941860465116279,1.0,0.5
+64,3-regular,2,SA,86.0,QFG cell (mismatch),100,0.9825581395348837,1.0,0.2
+64,3-regular,2,SA,86.0,QFG cell (mismatch),1000,0.9953488372093022,1.0,0.6
+64,3-regular,2,SA,86.0,QFG cell (trimmed),100,0.9848837209302326,1.0,0.3
+64,3-regular,2,SA,86.0,QFG cell (trimmed),1000,0.991860465116279,1.0,0.3
+64,3-regular,3,SA,88.0,ideal,100,0.9704545454545456,0.9886363636363636,0.0
+64,3-regular,3,SA,88.0,ideal,1000,0.9977272727272727,1.0,0.9
+64,3-regular,3,SA,88.0,QFG cell (mismatch),100,0.9738636363636364,0.9886363636363636,0.0
+64,3-regular,3,SA,88.0,QFG cell (mismatch),1000,0.9977272727272727,1.0,0.9
+64,3-regular,3,SA,88.0,QFG cell (trimmed),100,0.9715909090909091,0.9886363636363636,0.0
+64,3-regular,3,SA,88.0,QFG cell (trimmed),1000,0.9954545454545454,1.0,0.8
+64,3-regular,4,SA,86.0,ideal,100,0.9744186046511628,1.0,0.1
+64,3-regular,4,SA,86.0,ideal,1000,1.0,1.0,1.0
+64,3-regular,4,SA,86.0,QFG cell (mismatch),100,0.9813953488372094,1.0,0.2
+64,3-regular,4,SA,86.0,QFG cell (mismatch),1000,1.0,1.0,1.0
+64,3-regular,4,SA,86.0,QFG cell (trimmed),100,0.977906976744186,1.0,0.3
+64,3-regular,4,SA,86.0,QFG cell (trimmed),1000,1.0,1.0,1.0

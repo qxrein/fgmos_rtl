@@ -1,0 +1,6 @@
+design thr3
+die_area_um 0.0 0.0 17.14 17.14
+core_area_um 2.3 2.72 14.72 13.6
+std_cell_area_um2 86.33279800000001
+num_cells 8
+num_flops 2

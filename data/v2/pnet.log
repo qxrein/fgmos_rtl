@@ -1,0 +1,36 @@
+/Users/rein/projects/fgmos_rtl/sim/v2/pnet.py:119: RuntimeWarning: divide by zero encountered in log
+  kl_list.append(float(np.sum(np.where(p > 0, p * np.log(p / pb), 0))))
+/Users/rein/projects/fgmos_rtl/sim/v2/pnet.py:119: RuntimeWarning: invalid value encountered in multiply
+  kl_list.append(float(np.sum(np.where(p > 0, p * np.log(p / pb), 0))))
+cell: {'kn': 0.18591201641380942, 'sig_off': 0.007019142402332432} SIG_MIM 0.013999999999999999
+                         model  KL_mean  KL_max  clamp_inference_mean  clamp_inference_min
+0         ideal logistic p-bit   0.0016  0.0020                0.9637               0.9622
+1  ideal Gaussian-dither p-bit   0.0067  0.0109                0.9881               0.9868
+2          QFG cell (mismatch)   0.0161  0.0407                0.9892               0.9810
+3           QFG cell (trimmed)   0.0075  0.0227                0.9889               0.9856
+                                         ratio   best  p_succ
+n  graph     model               sweeps                      
+20 3-regular QFG cell (mismatch) 100     0.994  1.000    0.84
+                                 1000    1.000  1.000    1.00
+             QFG cell (trimmed)  100     0.995  1.000    0.88
+                                 1000    1.000  1.000    1.00
+             ideal               100     0.995  1.000    0.86
+                                 1000    1.000  1.000    1.00
+   G(n,0.5)  QFG cell (mismatch) 100     0.998  1.000    0.92
+                                 1000    1.000  1.000    1.00
+             QFG cell (trimmed)  100     0.998  1.000    0.92
+                                 1000    1.000  1.000    1.00
+             ideal               100     0.998  1.000    0.92
+                                 1000    1.000  1.000    1.00
+64 3-regular QFG cell (mismatch) 100     0.979  0.998    0.20
+                                 1000    0.998  1.000    0.86
+             QFG cell (trimmed)  100     0.977  0.995    0.20
+                                 1000    0.997  1.000    0.78
+             ideal               100     0.981  0.998    0.20
+                                 1000    0.998  1.000    0.86
+   G(n,0.5)  QFG cell (mismatch) 100     0.995  1.000    0.24
+                                 1000    0.999  1.000    0.58
+             QFG cell (trimmed)  100     0.996  1.000    0.28
+                                 1000    0.999  1.000    0.66
+             ideal               100     0.997  1.000    0.40
+                                 1000    0.999  1.000    0.70

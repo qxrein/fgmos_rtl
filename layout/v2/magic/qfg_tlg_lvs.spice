@@ -1,0 +1,35 @@
+* NGSPICE file created from qfg_tlg.ext - technology: sky130A
+
+.subckt sky130_fd_pr__pfet_01v8_V7R9RB B D0 G S1 D2 S3 a_159_n364#
+X0 D2 G S1 B sky130_fd_pr__pfet_01v8 ad=0.66 pd=4.33 as=0.66 ps=4.33 w=4 l=0.15
+X1 a_159_n364# G S3 B sky130_fd_pr__pfet_01v8 ad=1.24 pd=8.62 as=0.66 ps=4.33 w=4 l=0.15
+X2 S3 G D2 B sky130_fd_pr__pfet_01v8 ad=0.66 pd=4.33 as=0.66 ps=4.33 w=4 l=0.15
+X3 S1 G D0 B sky130_fd_pr__pfet_01v8 ad=0.66 pd=4.33 as=1.24 ps=8.62 w=4 l=0.15
+.ends
+
+.subckt sky130_fd_pr__nfet_01v8_EQ7N4B B D S G
+X0 S G D B sky130_fd_pr__nfet_01v8 ad=0.1218 pd=1.42 as=0.1218 ps=1.42 w=0.42 l=0.5
+.ends
+
+.subckt sky130_fd_pr__nfet_01v8_M48NH5 B D S G
+X0 S G D B sky130_fd_pr__nfet_01v8 ad=0.1218 pd=1.42 as=0.1218 ps=1.42 w=0.42 l=0.15
+.ends
+
+.subckt sky130_fd_pr__pfet_01v8_SEBX2B B D S G
+X0 S G D B sky130_fd_pr__pfet_01v8 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.15
+.ends
+
+.subckt qfg_tlg A B C VB RST FG Y YB VDD VSS
+XMP VDD VDD FG YB VDD YB VDD sky130_fd_pr__pfet_01v8_V7R9RB
+XMR VSS FG VB RST sky130_fd_pr__nfet_01v8_EQ7N4B
+XMIN VSS Y VSS YB sky130_fd_pr__nfet_01v8_M48NH5
+XMIP VDD Y VDD YB sky130_fd_pr__pfet_01v8_SEBX2B
+XMNA VSS YB VSS A sky130_fd_pr__nfet_01v8_M48NH5
+XMNB VSS YB VSS B sky130_fd_pr__nfet_01v8_M48NH5
+XMNC VSS YB VSS C sky130_fd_pr__nfet_01v8_M48NH5
+X0 FG C sky130_fd_pr__cap_mim_m3_1 l=2 w=2
+X1 FG A sky130_fd_pr__cap_mim_m3_1 l=2 w=2
+X2 FG B sky130_fd_pr__cap_mim_m3_1 l=2 w=2
+X3 FG VSS sky130_fd_pr__cap_mim_m3_1 l=2.55 w=9.2
+.ends
+

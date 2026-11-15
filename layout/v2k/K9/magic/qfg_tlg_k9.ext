@@ -1,0 +1,353 @@
+timestamp 1794496934
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 4400000 2200000 950000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12800 125 125 47 47 29 5
+use sky130_fd_pr__nfet_01v8_M48NH5 MN0 1 0 180 0 1 1560
+use sky130_fd_pr__nfet_01v8_M48NH5 MN1 1 0 900 0 1 1560
+use sky130_fd_pr__nfet_01v8_M48NH5 MN2 1 0 1620 0 1 1560
+use sky130_fd_pr__pfet_01v8_4SLV3C MP 1 0 935 0 1 2410
+use sky130_fd_pr__nfet_01v8_M48NH5 MN3 1 0 2340 0 1 1560
+use sky130_fd_pr__nfet_01v8_M48NH5 MN4 1 0 3060 0 1 1560
+use sky130_fd_pr__nfet_01v8_M48NH5 MN5 1 0 3780 0 1 1560
+use sky130_fd_pr__nfet_01v8_M48NH5 MN6 1 0 4500 0 1 1560
+use sky130_fd_pr__nfet_01v8_M48NH5 MN7 1 0 5220 0 1 1560
+use sky130_fd_pr__nfet_01v8_M48NH5 MIN 1 0 6642 0 1 1560
+use sky130_fd_pr__pfet_01v8_SEBX2B MIP 1 0 6642 0 1 2110
+use sky130_fd_pr__nfet_01v8_M48NH5 MN8 1 0 5940 0 1 1560
+use sky130_fd_pr__nfet_01v8_EQ7N4B MR 1 0 6291 0 1 1560
+parameters sky130_fd_pr__cap_mim_m3_1 w=w l=l
+port "RST" 11 6291 1466 6291 1466 v
+port "I8" 9 5998 1390 5998 1390 m3
+port "I7" 8 5278 1390 5278 1390 m3
+port "I6" 7 4558 1390 4558 1390 m3
+port "I5" 6 3838 1390 3838 1390 m3
+port "I4" 5 3118 1390 3118 1390 m3
+port "I3" 4 2398 1390 2398 1390 m3
+port "I2" 3 1678 1390 1678 1390 m3
+port "I1" 2 958 1390 958 1390 m3
+port "I0" 1 238 1390 238 1390 m3
+port "VB" 10 6370 1592 6370 1592 v
+port "VSS" 16 580 1728 580 1728 m1
+port "FG" 12 926 1400 926 1400 m4
+port "Y" 13 6598 1900 6598 1900 m3
+port "YB" 14 380 1686 380 1686 m2
+port "VDD" 15 1135 2941 1135 2941 m1
+node "RST" 0 64.2168 6291 1466 v 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8004 358 4864 280 0 0 0 0 0 0 0 0
+node "I8" 1 525.481 5998 1390 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10875 424 15264 632 283200 2140 0 0 0 0 0 0
+node "I7" 1 438.712 5278 1390 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10875 424 15264 632 283200 2140 0 0 0 0 0 0
+node "I6" 1 438.712 4558 1390 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10875 424 15264 632 283200 2140 0 0 0 0 0 0
+node "I5" 1 438.712 3838 1390 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10875 424 15264 632 283200 2140 0 0 0 0 0 0
+node "I4" 1 438.712 3118 1390 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10875 424 15264 632 283200 2140 0 0 0 0 0 0
+node "I3" 1 438.712 2398 1390 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10875 424 15264 632 283200 2140 0 0 0 0 0 0
+node "I2" 1 362.105 1678 1390 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10875 424 15264 632 283200 2140 0 0 0 0 0 0
+node "I1" 1 345.491 958 1390 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10875 424 15264 632 283200 2140 0 0 0 0 0 0
+node "I0" 1 452.79 238 1390 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10875 424 15264 632 283200 2140 0 0 0 0 0 0
+node "VB" 0 42.7688 6370 1592 v 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4864 280 5776 304 0 0 0 0 0 0 0 0
+node "VSS" 25 4329.5 580 1728 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 359688 15704 98016 3580 1031680 5152 0 0 0 0 0 0
+node "FG" 11 3761.82 926 1400 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 76652 3440 11096 596 20000 800 2247838 33862 0 0 0 0
+node "Y" 2 384.544 6598 1900 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9728 560 10640 584 36728 1340 0 0 0 0 0 0
+node "YB" 31 3657.98 380 1686 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 104188 5604 558744 20036 0 0 0 0 0 0 0 0
+node "VDD" 22 3005.42 1135 2941 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 367420 16138 0 0 0 0 0 0 0 0 0 0
+substrate "VSUBS" 0 0 -1073741817 -1073741817 space 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+cap "Y" "VDD" 2.06038
+cap "YB" "I6" 55.4331
+cap "VSS" "I7" 32.0178
+cap "I1" "FG" 703.712
+cap "YB" "I2" 56.1714
+cap "VSS" "I4" 32.0178
+cap "FG" "Y" 9.23334
+cap "VB" "YB" 25.0919
+cap "I8" "VDD" 0.389703
+cap "I5" "VDD" 0.465317
+cap "I8" "RST" 13.8786
+cap "FG" "I8" 561.737
+cap "YB" "VDD" 27.9306
+cap "I0" "YB" 50.9813
+cap "I1" "VSS" 79.7449
+cap "YB" "RST" 21.7939
+cap "I5" "FG" 596.2
+cap "VSS" "Y" 37.7751
+cap "I6" "VDD" 0.465317
+cap "YB" "FG" 669.208
+cap "I2" "VDD" 0.629246
+cap "I7" "I8" 81.0151
+cap "YB" "I3" 55.4331
+cap "FG" "I6" 596.2
+cap "VB" "RST" 1.01088
+cap "I4" "I5" 81.0151
+cap "I2" "FG" 609.135
+cap "YB" "I7" 55.4459
+cap "VSS" "I8" 28.7537
+cap "I3" "I2" 81.0151
+cap "VB" "FG" 34.2062
+cap "YB" "I4" 55.4331
+cap "VSS" "I5" 32.0178
+cap "I6" "I7" 81.0151
+cap "VSS" "YB" 2014.77
+cap "I0" "VDD" 0.489651
+cap "VSS" "I6" 32.0178
+cap "FG" "VDD" 35.0853
+cap "I0" "FG" 548.486
+cap "VSS" "I2" 76.9303
+cap "I3" "VDD" 0.465317
+cap "FG" "RST" 3.33571
+cap "I1" "YB" 59.1827
+cap "VB" "VSS" 11.8604
+cap "YB" "Y" 163.305
+cap "I7" "VDD" 0.465317
+cap "I3" "FG" 597.673
+cap "I4" "VDD" 0.465317
+cap "I1" "I2" 81.0151
+cap "FG" "I7" 596.2
+cap "VSS" "VDD" 89.4729
+cap "I0" "VSS" 191.414
+cap "I4" "FG" 596.2
+cap "VB" "Y" 19.9159
+cap "YB" "I8" 51.7951
+cap "VSS" "RST" 8.5042
+cap "I3" "I4" 81.0151
+cap "YB" "I5" 55.4331
+cap "VSS" "FG" 2188.59
+cap "VSS" "I3" 32.0178
+cap "I1" "VDD" 0.532305
+cap "I5" "I6" 81.0151
+cap "I0" "I1" 81.0151
+device csubckt sky130_fd_pr__cap_mim_m3_1 40 40 41 41 w=1840 l=416 "None" "FG" 4192 0 "VSS" 0 1031680,5152
+device csubckt sky130_fd_pr__cap_mim_m3_1 5800 870 5801 871 w=400 l=400 "None" "FG" 1280 0 "I8" 0 283200,2140
+device csubckt sky130_fd_pr__cap_mim_m3_1 5080 870 5081 871 w=400 l=400 "None" "FG" 1280 0 "I7" 0 283200,2140
+device csubckt sky130_fd_pr__cap_mim_m3_1 4360 870 4361 871 w=400 l=400 "None" "FG" 1280 0 "I6" 0 283200,2140
+device csubckt sky130_fd_pr__cap_mim_m3_1 3640 870 3641 871 w=400 l=400 "None" "FG" 1280 0 "I5" 0 283200,2140
+device csubckt sky130_fd_pr__cap_mim_m3_1 2920 870 2921 871 w=400 l=400 "None" "FG" 1280 0 "I4" 0 283200,2140
+device csubckt sky130_fd_pr__cap_mim_m3_1 2200 870 2201 871 w=400 l=400 "None" "FG" 1280 0 "I3" 0 283200,2140
+device csubckt sky130_fd_pr__cap_mim_m3_1 1480 870 1481 871 w=400 l=400 "None" "FG" 1280 0 "I2" 0 283200,2140
+device csubckt sky130_fd_pr__cap_mim_m3_1 760 870 761 871 w=400 l=400 "None" "FG" 1280 0 "I1" 0 283200,2140
+device csubckt sky130_fd_pr__cap_mim_m3_1 40 870 41 871 w=400 l=400 "None" "FG" 1280 0 "I0" 0 283200,2140
+cap "MN0/B" "MP/B" 1.60853
+cap "MP/G" "MN0/G" 0.426758
+cap "MN0/B" "MN2/G" 0.00787623
+cap "MN0/B" "MN0/G" 25.4364
+cap "MN0/B" "MP/G" 5.33556
+cap "MP/G" "MN1/G" 0.052671
+cap "MP/G" "MN0/D" 8.10505
+cap "MN0/B" "MN1/G" 25.4147
+cap "MP/B" "MP/G" 19.7392
+cap "MN0/B" "MN0/D" 0.106891
+cap "MP/G" "MN0/D" 0.123839
+cap "MN0/B" "MN2/G" 25.6283
+cap "MP/G" "MN2/G" 0.203634
+cap "MP/G" "MN0/B" 3.79633
+cap "MN0/B" "MN3/G" 25.4147
+cap "MN0/B" "MP/B" 1.16476
+cap "MN0/B" "MN1/G" 0.221508
+cap "MP/G" "MN3/G" 0.203634
+cap "MN0/D" "MN0/B" 0.0700613
+cap "MN0/B" "MN4/G" 0.00787623
+cap "MN2/B" "MN5/G" 25.4147
+cap "MN5/G" "FG" 0.203634
+cap "MN2/B" "FG" 3.4576
+cap "MN2/B" "MN3/G" 0.221508
+cap "MN2/D" "FG" 0.123839
+cap "MN2/B" "MN6/G" 0.00787623
+cap "MN2/B" "MN4/G" 25.6283
+cap "MN4/G" "FG" 0.203634
+cap "MN4/B" "MN8/G" 0.00787623
+cap "MN4/B" "MN6/G" 25.6283
+cap "MN6/G" "FG" 0.203634
+cap "MN4/D" "FG" 0.123839
+cap "MN4/B" "FG" 3.4576
+cap "MN4/B" "MN7/G" 25.4147
+cap "MN7/G" "FG" 0.203634
+cap "MN4/B" "MN5/G" 0.221508
+cap "MN5/B" "MN7/G" 0.221508
+cap "MN8/G" "FG" 0.203634
+cap "MN6/D" "FG" 0.0619193
+cap "MN5/B" "MN8/G" 37.9423
+cap "MN5/B" "FG" 1.7288
+cap "MN1/G" "MN0/B" 50.2285
+cap "MN0/G" "MP/B" 29.1431
+cap "MP/G" "MN3/G" 0.10559
+cap "MN0/B" "MP/B" 161.961
+cap "MN0/D" "MN0/G" 7.22683
+cap "MP/G" "MN1/G" 20.1577
+cap "MN0/D" "MN0/B" 73.7855
+cap "MP/G" "MP/B" 79.7858
+cap "MP/G" "MN0/D" 43.6803
+cap "MN1/G" "MP/B" 17.2348
+cap "MN0/B" "MN2/G" 0.0606806
+cap "MN0/D" "MN1/G" 7.62226
+cap "MP/G" "MN2/G" 0.215094
+cap "MN0/D" "MP/B" 393.939
+cap "MN0/G" "MN0/B" 50.7454
+cap "MP/G" "MN0/G" 14.4036
+cap "MP/G" "MN0/B" 30.6262
+cap "MN1/G" "MN2/G" 0.712472
+cap "MN0/G" "MN1/G" 1.5
+cap "MN0/B" "MN0/D" 84.3375
+cap "MN3/G" "MN4/G" 0.712472
+cap "MP/G" "MN2/G" 14.1193
+cap "MN0/B" "MN3/G" 49.8277
+cap "MN0/D" "MN2/G" 5.46658
+cap "MP/G" "MN0/D" 19.5852
+cap "MN3/G" "MN2/G" 1.5
+cap "MP/G" "MN3/G" 0.539033
+cap "MN0/B" "MN1/G" 0.177207
+cap "MN0/B" "MP/B" 87.9759
+cap "MN3/G" "MN0/D" 2.42575
+cap "MN0/B" "MN4/G" 0.0606806
+cap "MN1/G" "MN2/G" 0.787525
+cap "MP/B" "MN2/G" 25.4689
+cap "MP/B" "MP/G" 33.0014
+cap "MN0/D" "MN1/G" 0.207947
+cap "MP/B" "MN0/D" 162.174
+cap "MN0/B" "MN2/G" 50.2723
+cap "MN0/B" "MP/G" 27.4302
+cap "MP/B" "MN3/G" 0.0192477
+cap "MN2/D" "FG" -4.20558
+cap "MN2/B" "MP/D10" 0.216636
+cap "MN2/D" "MN3/G" 0.207947
+cap "MN4/G" "MN2/B" 49.9442
+cap "MN5/G" "MN2/B" 49.8277
+cap "MN4/G" "FG" 0.539033
+cap "MN4/G" "MN3/G" 0.787525
+cap "MN5/G" "FG" 0.539033
+cap "MN5/G" "MN6/G" 0.712472
+cap "MN4/G" "MN2/D" 2.63369
+cap "MN5/G" "MN2/D" 2.42575
+cap "MN2/B" "FG" 19.5277
+cap "MN6/G" "MN2/B" 0.0606806
+cap "MN4/G" "MP/D10" 0.0192477
+cap "MN2/B" "MN3/G" 0.177207
+cap "MN5/G" "MP/D10" 0.0192477
+cap "MN4/G" "MN5/G" 1.5
+cap "MN2/B" "MN2/D" 84.3355
+cap "MR/D" "MN7/G" 0.539033
+cap "MN7/G" "MN8/G" 0.712472
+cap "MR/D" "MN4/B" 19.5277
+cap "MN4/B" "MN8/G" 0.0606806
+cap "MIP/B" "MN7/G" 0.0192477
+cap "MN4/D" "MN6/G" 2.63369
+cap "MN4/B" "MIP/B" 0.216636
+cap "MN6/G" "MN7/G" 1.5
+cap "MN4/B" "MN6/G" 49.9442
+cap "MN5/G" "MN6/G" 0.787525
+cap "MN4/D" "MN7/G" 2.42575
+cap "MN4/B" "MN4/D" 84.3355
+cap "MR/D" "MN6/G" 0.539033
+cap "MN4/D" "MN5/G" 0.207947
+cap "MN4/B" "MN7/G" 49.8277
+cap "MIP/B" "MN6/G" 0.0192477
+cap "MN4/B" "MN5/G" 0.177207
+cap "MR/D" "MN4/D" -4.20558
+cap "MR/G" "MN5/B" 5.35078
+cap "MN8/G" "MIP/B" 0.0192477
+cap "MN8/G" "MR/D" 1.7995
+cap "MN6/D" "MN7/G" 0.243496
+cap "MN7/G" "MN5/B" 0.177207
+cap "MIN/D" "MR/S" 0.894567
+cap "MN6/D" "MIN/D" 2.64189
+cap "MR/D" "MR/S" -8.81341
+cap "MIN/D" "MN5/B" 4.93531
+cap "MN6/D" "MIP/B" 90.4748
+cap "MN6/D" "MR/D" -4.34035
+cap "MIN/D" "MR/G" 2.32317
+cap "MN5/B" "MIP/B" 72.9458
+cap "MR/D" "MN5/B" 20.8212
+cap "MR/G" "MIP/B" 0.0322156
+cap "MR/G" "MR/D" 7.33529
+cap "MIN/D" "MN7/G" 0.014047
+cap "MN6/D" "MN8/G" 2.54564
+cap "MN8/G" "MN5/B" 52.3033
+cap "MN7/G" "MR/D" 0.279968
+cap "MN8/G" "MR/G" 3.87096
+cap "MIN/D" "MIP/B" 56.3461
+cap "MIN/D" "MR/D" 0.0967087
+cap "MN6/D" "MR/S" 1.12744
+cap "MN7/G" "MN8/G" 0.787525
+cap "MR/S" "MN5/B" -3.16001
+cap "MR/G" "MR/S" 3.1868
+cap "MN6/D" "MN5/B" 118.606
+cap "MIN/D" "MN8/G" 0.0396686
+cap "MN6/D" "MR/G" 10.2225
+cap "MP/B" "MN0/D" 7.97846
+cap "MN0/B" "MP/B" -0.405619
+cap "MP/G" "MN0/D" -1.77636e-15
+cap "MP/B" "MP/G" 13.3693
+cap "MP/B" "MN0/B" -0.405619
+cap "MP/G" "MN0/D" 4.55191e-15
+cap "MP/B" "MN0/D" 8.94203
+cap "MP/G" "MP/B" 11.5411
+cap "MN6/D" "MIP/B" -0.376947
+cap "MIN/D" "MIP/B" -0.881194
+cap "MN5/B" "MIP/B" -0.316352
+merge "MR/B" "MN8/S" -2631.81 0 0 0 0 0 0 0 0 0 0 -25160 -1616 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -25160 -1616 -120520 -7172 0 0 0 0 0 0 0 0 0 0
+merge "MN8/S" "MN8/B"
+merge "MN8/B" "MIP/VSUBS"
+merge "MIP/VSUBS" "MIN/S"
+merge "MIN/S" "MIN/B"
+merge "MIN/B" "MN7/S"
+merge "MN7/S" "MN7/B"
+merge "MN7/B" "MN6/S"
+merge "MN6/S" "MN6/B"
+merge "MN6/B" "MN5/S"
+merge "MN5/S" "MN5/B"
+merge "MN5/B" "MN4/S"
+merge "MN4/S" "MN4/B"
+merge "MN4/B" "MN3/S"
+merge "MN3/S" "MN3/B"
+merge "MN3/B" "MP/VSUBS"
+merge "MP/VSUBS" "MN2/S"
+merge "MN2/S" "MN2/B"
+merge "MN2/B" "MN1/S"
+merge "MN1/S" "MN1/B"
+merge "MN1/B" "MN0/S"
+merge "MN0/S" "VSUBS"
+merge "VSUBS" "MN0/B"
+merge "MN0/B" "VSS"
+merge "MR/D" "MP/G" -1945.51 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -65564 -3692 0 0 0 0 -769440 -12364 0 0 0 0
+merge "MP/G" "FG"
+merge "MN8/D" "MIP/G" -1277.6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -64768 -4564 0 0 0 0 0 0 0 0 0 0
+merge "MIP/G" "MIN/G"
+merge "MIN/G" "MN7/D"
+merge "MN7/D" "MN6/D"
+merge "MN6/D" "MN5/D"
+merge "MN5/D" "MN4/D"
+merge "MN4/D" "MN3/D"
+merge "MN3/D" "MP/S15"
+merge "MP/S15" "MP/S13"
+merge "MP/S13" "MP/S11"
+merge "MP/S11" "MP/S9"
+merge "MP/S9" "MP/S7"
+merge "MP/S7" "MP/S5"
+merge "MP/S5" "MP/S3"
+merge "MP/S3" "MP/S1"
+merge "MP/S1" "MN2/D"
+merge "MN2/D" "MN1/D"
+merge "MN1/D" "MN0/D"
+merge "MN0/D" "YB"
+merge "MN8/G" "I8" -70.4268 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2668 -208 0 0 0 0 0 0 0 0 0 0
+merge "MIP/S" "MIP/B" -1557.78 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -61796 -3862 0 0 0 0 0 0 0 0 0 0
+merge "MIP/B" "MP/a_735_n364#"
+merge "MP/a_735_n364#" "MP/D14"
+merge "MP/D14" "MP/D12"
+merge "MP/D12" "MP/D10"
+merge "MP/D10" "MP/D8"
+merge "MP/D8" "MP/D6"
+merge "MP/D6" "MP/D4"
+merge "MP/D4" "MP/D2"
+merge "MP/D2" "MP/D0"
+merge "MP/D0" "MP/B"
+merge "MP/B" "VDD"
+merge "MN6/G" "I6" -60.5542 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2668 -208 0 0 0 0 0 0 0 0 0 0
+merge "MR/G" "RST" -64.2744 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -4232 -276 0 0 0 0 0 0 0 0 0 0
+merge "MIP/D" "MIN/D" -139.318 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -6992 -488 0 0 0 0 0 0 0 0 0 0
+merge "MIN/D" "Y"
+merge "MN4/G" "I4" -60.5542 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2668 -208 0 0 0 0 0 0 0 0 0 0
+merge "MN0/G" "I0" -96.6387 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2668 -208 0 0 0 0 0 0 0 0 0 0
+merge "MN2/G" "I2" -96.7527 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2668 -208 0 0 0 0 0 0 0 0 0 0
+merge "MN1/G" "I1" -90.5556 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2668 -208 0 0 0 0 0 0 0 0 0 0
+merge "MN3/G" "I3" -60.5542 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2668 -208 0 0 0 0 0 0 0 0 0 0
+merge "MR/S" "VB" -35.5669 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -3496 -244 0 0 0 0 0 0 0 0 0 0
+merge "MN5/G" "I5" -60.5542 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2668 -208 0 0 0 0 0 0 0 0 0 0
+merge "MN7/G" "I7" -60.5542 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2668 -208 0 0 0 0 0 0 0 0 0 0

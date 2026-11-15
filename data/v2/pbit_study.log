@@ -1,0 +1,19 @@
+trip 0.877032 kTC noise 0.000205069 comp {'vin': 0.00107927, 'von': 0.00287813}
+V* MC: mean 0.8770 sigma 7.00 mV
+   sigma_xi   v_half  sigma_eff
+0     0.025  0.89017    0.00461
+1     0.050  0.88989    0.00907
+2     0.100  0.88994    0.01838
+3     0.200  0.88978    0.03735
+vtrip_nom           0.877032
+vn_ktc_V            0.000205
+vn_comp_in_V        0.001079
+vn_comp_out_V       0.002878
+vt_mc_mean          0.877014
+vt_mc_sigma         0.007002
+stream_len       2000.000000
+p1                  0.482000
+lag1               -0.007771
+max_abs_ac          0.033704
+ci95                0.043827
+runs_z              0.326792

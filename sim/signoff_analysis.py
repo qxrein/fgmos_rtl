@@ -149,8 +149,14 @@ def _energy_j(cell: FGMOSCell, vctrl: float) -> float:
 
 
 def _classify_logic(cell: FGMOSCell, vctrl: float, thresh: float = 0.9) -> bool:
-    """True if NOR/MAJ/AND bands still separate at this corner."""
-    modes = [(0.65, "nor"), (0.90, "maj"), (1.15, "and")]
+    """True if NOR/MAJ/AND bands still separate at this corner.
+    Vctrl values chosen to achieve adequate Vfg overdrive with CT=40fF:
+    - NOR: Vctrl=1.10V → Vfg=(18+5.5)/40=0.588V, overdrive=98mV at TT
+    - MAJ: Vctrl=1.25V → Vfg=(18+6.25)/40=0.606V, overdrive=116mV at TT
+    - AND: Vctrl=1.40V → Vfg=(all-3-high+7)/40; all-3 case uses Vfg=(54+7)/40=1.525V
+    These centers will be confirmed / refined by the claim2 band-finding sweep.
+    """
+    modes = [(1.10, "nor"), (1.25, "maj"), (1.40, "and")]
     for vc, _ in modes:
         outs = []
         for n in range(8):
@@ -180,7 +186,7 @@ def _delay_energy_table() -> pd.DataFrame:
     tt = FGMOSCell()
     c_load = _load_cap_f()
     rows = []
-    for name, vctrl in [("NOR", 0.65), ("MAJ", 0.90), ("AND", 1.15), ("P-bit", 0.68)]:
+    for name, vctrl in [("NOR", 1.10), ("MAJ", 1.25), ("AND", 1.40), ("P-bit", 1.12)]:
         tau = _delay_s(tt, vctrl, n_high=1)
         vfg = tt.Vfg_eff(tt.Vcc, 0, 0, vctrl)
         r_k = tt.R_eff(vfg)
@@ -213,8 +219,8 @@ def _mismatch_mc(n: int = 500, seed: int = 42) -> pd.DataFrame:
         dVth = rng.normal(0, 0.02)
         kn_scale = 1.0 + rng.normal(0, 0.05)
         cell = CornerCell(dVth=dVth, dkn=kn_scale)
-        ok = _classify_logic(cell, 0.9)
-        tau = _delay_s(cell, 0.65)
+        ok = _classify_logic(cell, 1.10)  # NOR mid-band Vctrl for CT=40fF
+        tau = _delay_s(cell, 1.10)  # NOR band mid-point, CT=40fF calibrated
         rows.append({"sample": i, "dVth_mV": dVth * 1e3, "kn_pct": (kn_scale - 1) * 100, "logic_ok": ok, "tau_ps": tau * 1e12})
     return pd.DataFrame(rows)
 
@@ -443,13 +449,14 @@ def run() -> bool:
     pvt_rows = []
     for label, spec in PVT_CORNERS.items():
         cell = CornerCell(dVth=spec["dVth"], dkn=spec["dkn"], Vcc=spec["Vcc"], T=spec["T"])
-        tau = _delay_s(cell, 0.65)
+        # NOR mid-band at CT=40fF: Vctrl=1.10V gives Vfg=(10*Vcc+5*1.10)/40
+        tau = _delay_s(cell, 1.10)
         pvt_rows.append(
             {
                 "corner": label,
-                "tau_nor_ps": round(tau * 1e12, 0),
-                "E_eval_fJ": round(_energy_j(cell, 0.65) * 1e15, 1),
-                "logic_ok": _classify_logic(cell, 0.9),
+                "tau_nor_ps": round(tau * 1e12, 0) if np.isfinite(tau) else None,
+                "E_eval_fJ": round(_energy_j(cell, 1.10) * 1e15, 1),
+                "logic_ok": _classify_logic(cell, 1.10),
             }
         )
     pvt_cell_df = pd.DataFrame(pvt_rows)

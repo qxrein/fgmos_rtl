@@ -1,0 +1,46 @@
+\documentclass[border=4pt]{standalone}
+\usepackage[siunitx,american]{circuitikz}
+\usepackage{helvet}\renewcommand{\familydefault}{\sfdefault}
+\begin{document}
+\begin{circuitikz}[font=\small, line width=0.6pt]
+\ctikzset{tripoles/mos style/arrows, bipoles/capacitor/width=0.12, bipoles/capacitor/height=0.45}
+% --- supply and PMOS load (gate = FG)
+\draw (4.5,7.6) node[vcc]{$V_{DD}$};
+\draw (4.5,5.6) node[pmos, emptycircle](MP){};
+\draw (MP.S) -- (4.5,7.6);
+\draw (MP.D) -- (4.5,3.6);
+\node[right] at (4.65,5.6) {$M_P$};
+% --- YB node and pull-down network
+\draw (3.3,3.6) -- (6.3,3.6);
+\fill (4.5,3.6) circle (1.5pt);
+\node[above right] at (4.5,3.6) {$Y_B$};
+\foreach \x/\l in {3.3/A, 4.8/B, 6.3/C}{
+  \draw (\x,2.3) node[nmos](N\l){};
+  \draw (N\l.D) -- (\x,3.6);
+  \draw (N\l.S) -- (\x,1.0);
+  \draw (N\l.G) -- ++(-0.12,0) node[left]{\l};
+}
+\draw (3.3,1.0) -- (6.3,1.0);
+\draw (4.8,1.0) node[ground]{};
+% --- restoring inverter
+\draw (6.3,3.6) -- (6.9,3.6) node[not port, anchor=in](inv){};
+\draw (inv.out) -- ++(0.25,0) node[right]{$Y$};
+% --- floating gate node
+\draw (MP.G) -- (1.8,5.6);
+\draw (1.8,7.0) -- (1.8,3.6);
+\fill (1.8,5.6) circle (1.5pt);
+\node[above right] at (1.8,5.6) {FG};
+\foreach \y/\l in {6.3/A, 5.6/B, 4.9/C}{
+  \draw (1.8,\y) to[C] (0.2,\y) node[left]{\l};
+}
+\node[font=\scriptsize] at (1.0,4.4) {$3\times C_\mathrm{in}$ (MIM)};
+\draw (1.8,3.6) to[C, l_={\scriptsize $C_\mathrm{B}$ (MIM)}] (1.8,2.5) node[ground]{};
+% --- quasi-floating-gate reset switch
+\draw (1.8,7.0) -- (1.8,7.6) coordinate(top);
+\draw (1.8,7.6) node[nmos, rotate=90, anchor=D](MR){};
+\draw (MR.S) -- ++(0.3,0) node[right]{$V_B$};
+\draw (MR.G) -- ++(0,-0.15) node[below]{\scriptsize RST};
+\node[font=\scriptsize] at (2.3,8.05) {$M_R$};
+\node[align=left, font=\scriptsize] at (8.6,2.2) {$n$: asserted inputs\\[2pt] $Y = [\,n \ge T\,]$\\ $T(V_B) = 1,2,3$\\ $\Rightarrow$ OR3 / MAJ3 / AND3};
+\end{circuitikz}
+\end{document}

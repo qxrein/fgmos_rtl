@@ -6,7 +6,7 @@
 .param L_NFET  = 0.15e-6
 .param VCC     = 1.8
 .param TEMP    = 27
-.param CT_FG   = 30e-15
+.param CT_FG   = 40e-15    ;* C1+C2+C3+CFG+CSB+CDB (full FG node capacitance)
 .param C1      = 10e-15
 .param C2      = 10e-15
 .param C3      = 10e-15

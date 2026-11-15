@@ -1,0 +1,52 @@
+
+Magic 8.3 revision 681 - Compiled on Tue Jan  1 00:00:00 UTC 1980.
+Starting magic under Tcl interpreter
+Using the terminal as the console.
+WARNING: RLIMIT_NOFILE is above 1024 and Tcl_Version<9 this may cause runtime issues [rlim_cur=1048576]
+Using NULL graphics device.
+Processing system .magicrc file
+Switching to WIRING tool.
+Switching to NETLIST tool.
+Switching to PICK tool.
+Switching to BOX tool.
+Sourcing design .magicrc for technology sky130A ...
+2 Magic internal units = 1 Lambda
+Input style sky130(): scaleFactor=2, multiplier=2
+The following types are not handled by extraction and will be treated as non-electrical types:
+    ubm 
+Scaled tech values by 2 / 1 to match internal grid scaling
+Loading sky130A Device Generator Menu ...
+Loading "extract.tcl" from command line.
+Cell qfg_tlg_k9 read from current working directory
+Cell sky130_fd_pr__nfet_01v8_M48NH5 read from current working directory
+Cell sky130_fd_pr__pfet_01v8_4SLV3C read from current working directory
+Cell sky130_fd_pr__pfet_01v8_SEBX2B read from current working directory
+Cell sky130_fd_pr__nfet_01v8_EQ7N4B read from current working directory
+Extracting sky130_fd_pr__nfet_01v8_M48NH5 into sky130_fd_pr__nfet_01v8_M48NH5.ext:
+Processing sky130_fd_pr__nfet_01v8_M48NH5
+Extracting sky130_fd_pr__pfet_01v8_4SLV3C into sky130_fd_pr__pfet_01v8_4SLV3C.ext:
+Processing sky130_fd_pr__pfet_01v8_4SLV3C
+Extracting sky130_fd_pr__pfet_01v8_SEBX2B into sky130_fd_pr__pfet_01v8_SEBX2B.ext:
+Processing sky130_fd_pr__pfet_01v8_SEBX2B
+Extracting sky130_fd_pr__nfet_01v8_EQ7N4B into sky130_fd_pr__nfet_01v8_EQ7N4B.ext:
+Processing sky130_fd_pr__nfet_01v8_EQ7N4B
+Extracting qfg_tlg_k9 into qfg_tlg_k9.ext:
+Processing qfg_tlg_k9
+exttospice finished.
+Extracting sky130_fd_pr__nfet_01v8_M48NH5 into sky130_fd_pr__nfet_01v8_M48NH5.ext:
+Processing sky130_fd_pr__nfet_01v8_M48NH5
+Extracting sky130_fd_pr__pfet_01v8_4SLV3C into sky130_fd_pr__pfet_01v8_4SLV3C.ext:
+Processing sky130_fd_pr__pfet_01v8_4SLV3C
+Extracting sky130_fd_pr__pfet_01v8_SEBX2B into sky130_fd_pr__pfet_01v8_SEBX2B.ext:
+Processing sky130_fd_pr__pfet_01v8_SEBX2B
+Extracting sky130_fd_pr__nfet_01v8_EQ7N4B into sky130_fd_pr__nfet_01v8_EQ7N4B.ext:
+Processing sky130_fd_pr__nfet_01v8_EQ7N4B
+Extracting qfg_tlg_k9 into qfg_tlg_k9.ext:
+Processing qfg_tlg_k9
+exttospice finished.
+   Generating output for cell sky130_fd_pr__nfet_01v8_M48NH5
+   Generating output for cell sky130_fd_pr__pfet_01v8_4SLV3C
+   Generating output for cell sky130_fd_pr__pfet_01v8_SEBX2B
+   Generating output for cell sky130_fd_pr__nfet_01v8_EQ7N4B
+   Generating output for cell qfg_tlg_k9
+BBOX -0.8 0.0 34.265 14.97

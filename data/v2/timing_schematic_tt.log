@@ -1,0 +1,6 @@
+[schematic tt]
+         E_fJ  tpd_ps  tpd_mean  trst_ps  Istat_max_uA
+mode                                                  
+AND3  1355.13     NaN       NaN      NaN        428.86
+MAJ3   906.81     NaN       NaN      NaN        254.25
+OR3    285.65   71.97     69.11    22.42        113.38

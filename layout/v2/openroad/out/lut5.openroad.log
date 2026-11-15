@@ -1,0 +1,164 @@
+OpenROAD dcf36133a369abc8f3c5e5738cd4d82e4903c0e0 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ODB-0227] LEF file: /Users/rein/projects/fgmos_rtl/.eda/pdk/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef, created 14 layers, 25 vias
+[WARNING ODB-0220] WARNING (LEFPARS-2008): NOWIREEXTENSIONATPIN statement is obsolete in version 5.6 or later.
+The NOWIREEXTENSIONATPIN statement will be ignored. See file /Users/rein/projects/fgmos_rtl/.eda/pdk/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef at line 2.
+
+[INFO ODB-0227] LEF file: /Users/rein/projects/fgmos_rtl/.eda/pdk/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef, created 437 library cells
+[INFO IFP-0107] Defining die area using utilization: 50.00% and aspect ratio: 1.
+[WARNING IFP-0028] Core area lower left (2.000, 2.000) snapped to (2.300, 2.720).
+[INFO IFP-0001] Added 15 rows of 90 site unithd.
+[INFO IFP-0100] Die BBox:  (  0.000  0.000 ) ( 46.150 46.150 ) um
+[INFO IFP-0101] Core BBox: (  2.300  2.720 ) ( 43.700 43.520 ) um
+[INFO IFP-0102] Core area:                         1689.120 um^2
+[INFO IFP-0103] Total instances area:               888.352 um^2
+[INFO IFP-0104] Effective utilization:                0.526
+[INFO IFP-0105] Number of instances:                     48
+Found 0 macro blocks.
+Using 2 tracks default min distance between IO pins.
+[INFO PPL-0001] Number of available slots 156
+[INFO PPL-0002] Number of I/O             8
+[INFO PPL-0003] Number of I/O w/sink      8
+[INFO PPL-0004] Number of I/O w/o sink    0
+[INFO PPL-0005] Slots per section         200
+[INFO PPL-0008] Successfully assigned pins to sections.
+[INFO PPL-0012] I/O nets HPWL: 199.32 um.
+[INFO TAP-0004] Inserted 30 endcaps.
+[INFO TAP-0005] Inserted 17 tapcells.
+[INFO GPL-0001] ---- Initialize GPL Main Data Structures
+[INFO GPL-0002] DBU: 1000
+[INFO GPL-0003] SiteSize: (  0.460  2.720 ) um
+[INFO GPL-0004] CoreBBox: (  2.300  2.720 ) ( 43.700 43.520 ) um
+[INFO GPL-0036] Movable instances area:        888.352 um^2
+[INFO GPL-0037] Total instances area:         1022.230 um^2
+[INFO GPL-0035] Pin density area adjust:        46.545 um^2
+[INFO GPL-0032] ---- Initialize Region: Top-level
+[INFO GPL-0006] Number of instances:                95
+[INFO GPL-0007] Movable instances:                  48
+[INFO GPL-0008] Fixed instances:                    47
+[INFO GPL-0009] Dummy instances:                     0
+[INFO GPL-0010] Number of nets:                     55
+[INFO GPL-0011] Number of pins:                    193
+[INFO GPL-0012] Die BBox:  (  0.000  0.000 ) ( 46.150 46.150 ) um
+[INFO GPL-0013] Core BBox: (  2.300  2.720 ) ( 43.700 43.520 ) um
+[INFO GPL-0016] Core area:                    1689.120 um^2
+[INFO GPL-0014] Region name: top-level.
+[INFO GPL-0015] Region area:                  1689.120 um^2
+[INFO GPL-0017] Fixed instances area:          133.878 um^2
+[INFO GPL-0018] Movable instances area:        934.897 um^2
+[INFO GPL-0019] Utilization:                    60.113 %
+[INFO GPL-0020] Standard cells area:           934.897 um^2
+[INFO GPL-0021] Large instances area:            0.000 um^2
+[INFO GPL-0005] ---- Execute Conjugate Gradient Initial Placement.
+[INFO GPL-0051] Source of initial instance position counters:
+	Odb location = 0	Core center = 48	Region center = 0
+[INFO GPL-0033] ---- Initialize Nesterov Region: Top-level
+[WARNING GPL-0302] Target density 0.6000 is too low for the available free area.
+Automatically adjusting to uniform density 0.6100.
+[INFO GPL-0023] Placement target density:       0.6100
+[INFO GPL-0024] Movable insts average area:     19.477 um^2
+[INFO GPL-0025] Ideal bin area:                 31.930 um^2
+[INFO GPL-0026] Ideal bin count:                    52
+[INFO GPL-0027] Total bin area:               1689.120 um^2
+[INFO GPL-0028] Bin count (X, Y):           4 ,      4
+[INFO GPL-0029] Bin size (W * H):      10.350 * 10.200 um
+[INFO GPL-0030] Number of bins:                     16
+[INFO GPL-0007] ---- Execute Nesterov Global Placement.
+[INFO GPL-0031] HPWL: Half-Perimeter Wirelength
+Iteration | Overflow |     HPWL (um) |  HPWL(%) |   Penalty | Group
+---------------------------------------------------------------
+        0 |   0.7152 |  4.399990e+02 |   +0.00% |  2.20e-12 |      
+       10 |   0.7292 |  3.617280e+02 |  -17.79% |  3.59e-12 |      
+       20 |   0.7286 |  3.076920e+02 |  -14.94% |  5.85e-12 |      
+       30 |   0.7269 |  3.062330e+02 |   -0.47% |  9.52e-12 |      
+       40 |   0.7270 |  3.061850e+02 |   -0.02% |  1.55e-11 |      
+       50 |   0.7279 |  3.064010e+02 |   +0.07% |  2.53e-11 |      
+       60 |   0.7283 |  3.068850e+02 |   +0.16% |  4.12e-11 |      
+       70 |   0.7284 |  3.080370e+02 |   +0.38% |  6.71e-11 |      
+       80 |   0.7286 |  3.119660e+02 |   +1.28% |  1.09e-10 |      
+       90 |   0.7288 |  3.261110e+02 |   +4.53% |  1.78e-10 |      
+      100 |   0.7287 |  3.494930e+02 |   +7.17% |  2.90e-10 |      
+      110 |   0.7189 |  3.794160e+02 |   +8.56% |  4.72e-10 |      
+      120 |   0.6671 |  3.950360e+02 |   +4.12% |  7.69e-10 |      
+      130 |   0.6155 |  4.097140e+02 |   +3.72% |  1.25e-09 |      
+      140 |   0.5910 |  4.269110e+02 |   +4.20% |  2.04e-09 |      
+      150 |   0.5955 |  4.724860e+02 |  +10.68% |  3.32e-09 |      
+      160 |   0.5431 |  5.095630e+02 |   +7.85% |  5.41e-09 |      
+      170 |   0.4608 |  5.347620e+02 |   +4.95% |  8.82e-09 |      
+      180 |   0.4102 |  5.608880e+02 |   +4.89% |  1.44e-08 |      
+      190 |   0.3485 |  5.783890e+02 |   +3.12% |  2.34e-08 |      
+      200 |   0.2952 |  5.882560e+02 |   +1.71% |  3.48e-08 |      
+      210 |   0.2454 |  5.980460e+02 |   +1.66% |  5.13e-08 |      
+      220 |   0.1908 |  6.105810e+02 |   +2.10% |  7.55e-08 |      
+      230 |   0.1393 |  6.180830e+02 |   +1.23% |  1.11e-07 |      
+      240 |   0.0973 |  6.223290e+02 |   +0.69% |  1.64e-07 |      
+      240 |   0.0973 |  6.223290e+02 |          |  1.70e-07 |      
+---------------------------------------------------------------
+[INFO GPL-1001] Global placement finished at iteration 240
+[INFO GPL-1002] Placed Cell Area              934.8966
+[INFO GPL-1003] Available Free Area          1555.2416
+[INFO GPL-1004] Minimum Feasible Density        0.6100 (cell_area / free_area)
+[INFO GPL-1006]   Suggested Target Densities:
+[INFO GPL-1007]     - For 90% usage of free space: 0.6679
+[INFO GPL-1008]     - For 80% usage of free space: 0.7514
+[INFO GPL-1014] Final placement area: 934.90 (+0.00%)
+Placement Analysis
+---------------------------------
+total displacement        250.8 u
+average displacement        2.6 u
+max displacement           12.5 u
+original HPWL             625.2 u
+legalized HPWL            917.6 u
+delta HPWL                   47 %
+
+[WARNING EST-0018] wire capacitance for corner default is zero. Use the set_wire_rc command to set wire resistance and capacitance.
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer mcon
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer mcon
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via2
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via2
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via3
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via3
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via4
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via4
+[INFO DRT-0167] List of default vias:
+  Layer via
+    default via: M1M2_PR
+  Layer via2
+    default via: M2M3_PR
+  Layer via3
+    default via: M3M4_PR
+  Layer via4
+    default via: M4M5_PR
+[INFO DRT-0168] Init region query.
+[INFO DRT-0033] FR_MASTERSLICE shape region query size = 0.
+[INFO DRT-0033] licon shape region query size = 0.
+[INFO DRT-0033] li1 shape region query size = 3051.
+[INFO DRT-0033] mcon shape region query size = 0.
+[INFO DRT-0033] met1 shape region query size = 574.
+[INFO DRT-0033] via shape region query size = 0.
+[INFO DRT-0033] met2 shape region query size = 8.
+[INFO DRT-0033] via2 shape region query size = 0.
+[INFO DRT-0033] met3 shape region query size = 0.
+[INFO DRT-0033] via3 shape region query size = 0.
+[INFO DRT-0033] met4 shape region query size = 0.
+[INFO DRT-0033] via4 shape region query size = 0.
+[INFO DRT-0033] met5 shape region query size = 0.
+[INFO DRT-0178] Init guide query.
+[INFO DRT-0036] FR_MASTERSLICE guide region query size = 0.
+[INFO DRT-0036] licon guide region query size = 0.
+[INFO DRT-0036] li1 guide region query size = 140.
+[INFO DRT-0036] mcon guide region query size = 0.
+[INFO DRT-0036] met1 guide region query size = 130.
+[INFO DRT-0036] via guide region query size = 0.
+[INFO DRT-0036] met2 guide region query size = 64.
+[INFO DRT-0036] via2 guide region query size = 0.
+[INFO DRT-0036] met3 guide region query size = 0.
+[INFO DRT-0036] via3 guide region query size = 0.
+[INFO DRT-0036] met4 guide region query size = 0.
+[INFO DRT-0036] via4 guide region query size = 0.
+[INFO DRT-0036] met5 guide region query size = 0.
+[INFO DRT-0179] Init gr pin query.

@@ -19,8 +19,25 @@ class FGMOSCell:
         self.Cfg   = 5e-15
         self.Csb   = 3e-15
         self.Cdb   = 2e-15
-        # Total FG-node capacitance (sky130_tt_params.sp CT_FG = 30 fF)
-        self.CT    = 30e-15
+        # Total FG-node capacitance: sum of all capacitors terminating on the
+        # floating node (charge conservation requires the full node capacitance
+        # in the denominator).  C1+C2+C3+Cfg+Csb+Cdb = 40 fF.
+        # NOTE: the SPICE subcircuit .ic also uses this 40 fF sum.
+        # Earlier code used 30 fF (= C1+C2+C3 only), which was physically wrong;
+        # it caused coupling coefficients to sum >1 and Vfg_eff to exceed Vcc
+        # when all inputs and Vctrl are simultaneously asserted.
+        #
+        # DESIGN IMPLICATION: with CT=40fF and Vcc=1.8V, the maximum achievable
+        # Vfg_eff with all inputs + Vctrl at Vcc is 35fF*1.8V/40fF = 1.575V,
+        # giving Vgs_eff_max = 1.085V and R_eff_min = 256 Ohm.
+        # The pull-down NFETs in parallel present R_nmos = 213 Ohm (n=1),
+        # 107 Ohm (n=2), or 71 Ohm (n=3).  The FGMOS pull-up cannot achieve
+        # R_eff < R_nmos for n>=2 within the supply headroom, so MAJ and AND
+        # operation (requiring Vout_HIGH with n=2 or n=3 inputs) is not feasible
+        # with this capacitor sizing.  Only NOR is confirmed achievable.
+        # Re-sizing (increase Cfg, increase Vcc, or reduce Csb+Cdb) is needed
+        # for full three-mode operation.
+        self.CT    = 40e-15
 
     def Vfg_eff(self, V1, V2, V3, Vctrl, Q0=0.0):
         """Effective floating gate voltage from capacitive divider + residual charge"""
@@ -53,20 +70,20 @@ class FGMOSCell:
         RTL cell output voltage.
         Circuit: Vcc — R_fgmos(ohmic) — nodeX — N parallel NMOS (inputs) — GND
         Vctrl programs R_eff (via Vfg) and the logic mode (NOR / MAJ / AND).
+        Uses physics-based divider throughout; no hardcoded Vctrl breakpoints.
         """
         R_fgmos = self.R_eff(Vfg, Q0)
+
+        if inputs_high_count == 0:
+            # No pull-down path: output floats to Vcc regardless of R_fgmos
+            return self.Vcc
+
         if R_fgmos == np.inf:
-            return self.Vcc if Vctrl < 0.78 else 0.12
+            # Pull-up device off: output pulled fully to GND by pull-down network
+            return 0.0
 
         kn_in = self.kn * (2.0 / 0.15)
         Vgs_in = self.Vcc
-
-        if inputs_high_count == 0:
-            # Idle output set by Vctrl-programmed R_eff band
-            return self.Vcc if Vctrl < 0.78 else 0.12
-
-        if Vctrl >= 1.02 and inputs_high_count == 3:
-            return self.Vcc  # AND: all inputs on, strong pull-down stack
 
         R_nmos_parallel = 1.0 / (
             inputs_high_count * kn_in * (Vgs_in - self.Vth0)

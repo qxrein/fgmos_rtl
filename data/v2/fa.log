@@ -1,0 +1,11 @@
+ff window (np.float64(0.78), np.float64(0.96))
+fs window (np.float64(0.84), np.float64(1.0))
+sf window (np.float64(0.56), np.float64(0.72))
+ss window (np.float64(0.66), np.float64(0.7))
+tt window (np.float64(0.7), np.float64(0.86))
+  corner   vb2      cout       sum    ok  tpd_sum_ps  tpd_cout_ps  E_fJ_per_add
+0     ff  0.87  00010111  01101001  True       54.26        77.05       4992.04
+1     fs  0.92  00010111  01101001  True       87.35        99.64       2236.06
+2     sf  0.64  00010111  01101001  True      108.54       143.80       3583.04
+3     ss  0.68  00010111  01101001  True      244.88       199.37       1304.16
+4     tt  0.78  00010111  01101001  True       86.12       111.64       2925.20

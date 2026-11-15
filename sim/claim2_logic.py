@@ -19,24 +19,21 @@ plt.rcParams.update({'font.family': 'serif', 'font.serif': ['Times New Roman'],
 
 
 def classify_output(Vout, Vctrl, n_high):
-    """Vctrl-dependent digitization (matches programmed R_eff bands)."""
-    if Vctrl < 0.78:  # NOR band
-        if Vout >= 0.85:
-            return 1
-        if Vout <= 0.55:
-            return 0
-    elif Vctrl < 1.02:  # MAJ band
-        if n_high == 0:
-            return 0 if Vout <= 0.55 else -1
-        if n_high >= 2:
-            return 1 if Vout >= 0.36 else 0
-        return 0 if Vout <= 0.55 else -1
-    else:  # AND band
-        if n_high == 3:
-            return 1 if Vout >= 0.85 else 0
-        if n_high == 0:
-            return 0 if Vout <= 0.55 else -1
-        return 0 if Vout <= 0.55 else -1
+    """
+    Digitize Vout into logic 1 (HIGH), 0 (LOW), or -1 (indeterminate).
+    Uses only voltage thresholds -- no hardcoded Vctrl band breakpoints,
+    so it works correctly regardless of the CT-dependent operating bands.
+    """
+    # n=0: pull-up drives output to Vcc regardless of Vctrl
+    if n_high == 0:
+        return 1 if Vout >= 0.85 else -1
+
+    # n>0: classify by voltage swing
+    if Vout >= 0.85:
+        return 1
+    if Vout <= 0.45:
+        return 0
+    # ambiguous transition region
     return -1
 
 

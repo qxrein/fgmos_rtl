@@ -1,0 +1,29 @@
+Startpoint: x[2] (input port clocked by vclk)
+Endpoint: y (output port clocked by vclk)
+Path Group: vclk
+Path Type: max
+
+    Delay      Time   Description
+-------------------------------------------------------------
+   0.0000    0.0000   clock vclk (rise edge)
+   0.0000    0.0000   clock network delay (ideal)
+   0.0000    0.0000 v input external delay
+   0.0144    0.0144 v x[2] (in)
+   0.3656    0.3800 v _06_/X (sky130_fd_sc_hd__maj3_1)
+   0.1283    0.5083 ^ _08_/X (sky130_fd_sc_hd__lpflow_isobufsrc_1)
+   0.0662    0.5745 v _10_/Y (sky130_fd_sc_hd__a31oi_1)
+   0.0002    0.5747 v y (out)
+             0.5747   data arrival time
+
+  10.0000   10.0000   clock vclk (rise edge)
+   0.0000   10.0000   clock network delay (ideal)
+   0.0000   10.0000   clock reconvergence pessimism
+   0.0000   10.0000   output external delay
+            10.0000   data required time
+-------------------------------------------------------------
+            10.0000   data required time
+            -0.5747   data arrival time
+-------------------------------------------------------------
+             9.4253   slack (MET)
+
+

@@ -1,0 +1,6 @@
+design fixed_maj3
+die_area_um 0.0 0.0 12.17 12.17
+core_area_um 2.3 2.72 10.12 8.16
+std_cell_area_um2 10.0096
+num_cells 1
+num_flops 0

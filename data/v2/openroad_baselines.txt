@@ -1,0 +1,9 @@
+recfg3_mux  area=72.57    cells=8    flops=2    delay_ns=0.4013  P_W=3.409598e-06 drc=0
+lut3        area=216.46   cells=11   flops=8    delay_ns=0.8584  P_W=5.646380e-06 drc=0
+thr3        area=86.33    cells=8    flops=2    delay_ns=0.5747  P_W=8.638216e-06 drc=0
+fixed_maj3  area=10.01    cells=1    flops=0    delay_ns=0.3742  P_W=1.856468e-06 drc=0
+lut5        area=888.35   cells=48   flops=32   delay_ns=1.1582  P_W=2.655508e-05 drc=0
+thr5        area=197.69   cells=18   flops=3    delay_ns=1.4125  P_W=4.240056e-05 drc=0
+lut7        area=3553.41  cells=210  flops=128  delay_ns=2.0632  P_W=1.086397e-04 drc=0
+thr7        area=232.72   cells=24   flops=3    delay_ns=2.0674  P_W=7.325401e-05 drc=0
+thr9        area=331.57   cells=32   flops=4    delay_ns=2.4108  P_W=1.575647e-04 drc=0

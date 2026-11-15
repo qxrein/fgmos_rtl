@@ -1,0 +1,4 @@
+MP sky130_fd_pr__pfet_01v8_V7R9RB
+MIP sky130_fd_pr__pfet_01v8_SEBX2B
+MN sky130_fd_pr__nfet_01v8_M48NH5
+MR sky130_fd_pr__nfet_01v8_EQ7N4B

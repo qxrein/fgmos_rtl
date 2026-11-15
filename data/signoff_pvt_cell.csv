@@ -1,4 +1,4 @@
 corner,tau_nor_ps,E_eval_fJ,logic_ok
-"TT (25°C, 1.80 V)",102.0,356.4,True
-"SS (125°C, 1.60 V)",296.0,281.6,True
-"FF (−40°C, 1.95 V)",57.0,418.3,True
+"TT (25°C, 1.80 V)",228.0,388.8,True
+"SS (125°C, 1.60 V)",inf,307.2,True
+"FF (−40°C, 1.95 V)",97.0,456.3,True

@@ -1,0 +1,6 @@
+design lut7
+die_area_um 0.0 0.0 88.3 88.3
+core_area_um 2.3 2.72 86.02 84.32
+std_cell_area_um2 3553.4079029999925
+num_cells 210
+num_flops 128

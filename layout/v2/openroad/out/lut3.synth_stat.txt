@@ -1,0 +1,22 @@
+
+11. Printing statistics.
+
+=== lut3 ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+       14        - wires
+       16        - wire bits
+       12        - public wires
+       14        - public wire bits
+        4        - ports
+        6        - port bits
+       11  216.458 cells
+        8  160.154   sky130_fd_sc_hd__dfxtp_1
+        1   11.261   sky130_fd_sc_hd__mux2_1
+        2   45.043   sky130_fd_sc_hd__mux4_2
+
+   Chip area for module '\lut3': 216.457600
+     of which used for sequential elements: 160.153600 (73.99%)
+

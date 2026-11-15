@@ -1,0 +1,6 @@
+design recfg3_mux
+die_area_um 0.0 0.0 16.045 16.045
+core_area_um 2.3 2.72 13.8 13.6
+std_cell_area_um2 72.569598
+num_cells 8
+num_flops 2

@@ -1,0 +1,185 @@
+timestamp 1794422517
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 4400000 2200000 950000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12800 125 125 47 47 29 5
+use sky130_fd_pr__nfet_01v8_EQ7N4B MR 1 0 531 0 1 1560
+use sky130_fd_pr__pfet_01v8_V7R9RB MP 1 0 359 0 1 2410
+use sky130_fd_pr__nfet_01v8_M48NH5 MNC 1 0 1514 0 1 1560
+use sky130_fd_pr__nfet_01v8_M48NH5 MNB 1 0 882 0 1 1560
+use sky130_fd_pr__nfet_01v8_M48NH5 MNA 1 0 180 0 1 1560
+use sky130_fd_pr__pfet_01v8_SEBX2B MIP 1 0 1198 0 1 2110
+use sky130_fd_pr__nfet_01v8_M48NH5 MIN 1 0 1198 0 1 1560
+parameters sky130_fd_pr__cap_mim_m3_1 w=w l=l
+port "C" 3 1572 1390 1572 1390 m3
+port "B" 2 940 1390 940 1390 m3
+port "RST" 5 531 1466 531 1466 v
+port "A" 1 238 1390 238 1390 m3
+port "VB" 4 610 1592 610 1592 v
+port "VSS" 10 800 1728 800 1728 m1
+port "FG" 6 350 1400 350 1400 m4
+port "Y" 7 1154 1900 1154 1900 m3
+port "YB" 8 700 1686 700 1686 m2
+port "VDD" 9 900 2941 900 2941 m1
+node "C" 1 488.207 1572 1390 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10875 424 15264 632 283200 2140 0 0 0 0 0 0
+node "B" 1 327.608 940 1390 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10875 424 15264 632 283200 2140 0 0 0 0 0 0
+node "RST" 0 64.2168 531 1466 v 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8004 358 4864 280 0 0 0 0 0 0 0 0
+node "A" 1 412.778 238 1390 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10875 424 15264 632 283200 2140 0 0 0 0 0 0
+node "VB" 0 42.7688 610 1592 v 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4864 280 5776 304 0 0 0 0 0 0 0 0
+node "VSS" 10 2513.59 800 1728 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 100616 4440 98016 3580 1227200 5340 0 0 0 0 0 0
+node "FG" 4 1623.7 350 1400 m4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 23660 1136 11096 596 20000 800 1244384 11936 0 0 0 0
+node "Y" 2 339.491 1154 1900 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9728 560 10640 584 36728 1340 0 0 0 0 0 0
+node "YB" 10 1020.39 700 1686 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 45820 2244 165824 6042 0 0 0 0 0 0 0 0
+node "VDD" 5 735.896 900 2941 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 85670 3888 0 0 0 0 0 0 0 0 0 0
+node "m1_144_2840#" 0 39.3886 144 2840 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3772 256 0 0 0 0 0 0 0 0 0 0
+substrate "VSUBS" 0 0 -1073741817 -1073741817 space 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+cap "VDD" "FG" 5.4297
+cap "m1_144_2840#" "VSS" 0.811238
+cap "A" "B" 75.7251
+cap "VDD" "B" 0.399397
+cap "YB" "RST" 11.0679
+cap "FG" "VSS" 2513.11
+cap "VDD" "Y" 2.06038
+cap "FG" "C" 489.478
+cap "VB" "RST" 1.01088
+cap "VSS" "B" 89.5971
+cap "VDD" "A" 0.0222964
+cap "YB" "VB" 42.199
+cap "Y" "VSS" 44.7679
+cap "m1_144_2840#" "YB" 0.043882
+cap "B" "C" 75.9483
+cap "FG" "RST" 7.09716
+cap "VSS" "A" 201.314
+cap "YB" "FG" 253.571
+cap "VDD" "VSS" 11.0741
+cap "RST" "B" 10.6378
+cap "YB" "B" 71.6487
+cap "FG" "VB" 34.7009
+cap "YB" "Y" 197.189
+cap "m1_144_2840#" "FG" 0.099435
+cap "A" "RST" 13.8786
+cap "VSS" "C" 80.6206
+cap "Y" "VB" 0.518115
+cap "YB" "A" 46.2076
+cap "VDD" "YB" 11.0554
+cap "FG" "B" 509.524
+cap "VSS" "RST" 10.5291
+cap "m1_144_2840#" "A" 0.0859468
+cap "YB" "VSS" 602.05
+cap "Y" "FG" 12.2991
+cap "m1_144_2840#" "VDD" 9.3882
+cap "YB" "C" 38.1492
+cap "Y" "B" 21.142
+cap "FG" "A" 641.47
+cap "VSS" "VB" 13.0781
+device csubckt sky130_fd_pr__cap_mim_m3_1 40 40 41 41 w=1840 l=510 "None" "FG" 4380 0 "VSS" 0 1227200,5340
+device csubckt sky130_fd_pr__cap_mim_m3_1 1480 870 1481 871 w=400 l=400 "None" "FG" 1280 0 "C" 0 283200,2140
+device csubckt sky130_fd_pr__cap_mim_m3_1 760 870 761 871 w=400 l=400 "None" "FG" 1280 0 "B" 0 283200,2140
+device csubckt sky130_fd_pr__cap_mim_m3_1 40 870 41 871 w=400 l=400 "None" "FG" 1280 0 "A" 0 283200,2140
+cap "MR/B" "MR/S" 0.0394712
+cap "MR/D" "MNA/G" 0.426758
+cap "MR/D" "MP/S1" 2.73083
+cap "MR/B" "MNA/G" 35.9698
+cap "MR/D" "MNB/G" 0.426758
+cap "MP/B" "MR/D" 15.4813
+cap "MR/B" "MP/S1" 0.352034
+cap "MR/D" "MR/G" 0.663277
+cap "MR/B" "MNB/G" 39.7214
+cap "MR/B" "MP/B" 2.93155
+cap "MR/D" "MIP/D" 0.0252183
+cap "MR/B" "MR/G" 1.12045
+cap "MR/D" "MR/S" 0.0418546
+cap "MR/B" "MR/D" 6.77568
+cap "MR/B" "MNC/G" 22.9772
+cap "MP/B" "MR/D" 1.53166
+cap "MR/B" "MP/B" 1.92982
+cap "MR/D" "MP/S1" 0.0252183
+cap "MR/B" "MR/D" 3.41199
+cap "MR/D" "MNC/G" 0.312924
+cap "MNB/G" "MR/G" 3.49165
+cap "MP/B" "MIP/D" 81.4505
+cap "MR/D" "MP/S1" 15.6614
+cap "MP/S1" "MNC/G" 1.72733
+cap "MR/B" "MNB/G" 51.7907
+cap "MIP/D" "MNA/G" 0.024246
+cap "MR/D" "MR/S" -8.68676
+cap "MP/S1" "MR/G" 6.80394
+cap "MR/B" "MP/S1" 93.9054
+cap "MP/B" "MR/D" 69.9851
+cap "MR/G" "MR/S" 3.1868
+cap "MR/B" "MR/S" -3.13392
+cap "MP/B" "MR/G" 5.65686
+cap "MR/D" "MNA/G" 10.1228
+cap "MP/S1" "MNB/G" 8.5869
+cap "MR/B" "MP/B" 192.433
+cap "MNA/G" "MR/G" 3.87096
+cap "MNB/G" "MR/S" 0.0299831
+cap "MR/B" "MNA/G" 52.4147
+cap "MR/D" "MIP/D" 2.45607
+cap "MIP/D" "MNC/G" 0.594501
+cap "MP/B" "MNB/G" 7.65755
+cap "MIP/D" "MR/G" 1.49702
+cap "MP/S1" "MR/S" 1.8978
+cap "MNB/G" "MNA/G" 0.00239894
+cap "MR/B" "MIP/D" 16.1116
+cap "MP/B" "MP/S1" 217.031
+cap "MR/D" "MNC/G" 0.25905
+cap "MP/S1" "MNA/G" 4.98055
+cap "MR/D" "MR/G" 10.3083
+cap "MIP/D" "MNB/G" 1.36424
+cap "MR/B" "MR/D" 34.1568
+cap "MR/B" "MR/G" 6.36834
+cap "MP/B" "MNA/G" 21.9972
+cap "MP/S1" "MIP/D" -6.71385
+cap "MR/D" "MNB/G" 0.998193
+cap "MIP/D" "MR/S" 0.0441667
+cap "MP/S1" "MNC/G" 4.34525
+cap "MNB/G" "MR/B" 0.131445
+cap "MIP/D" "MR/B" 0.1199
+cap "MP/S1" "MP/B" 59.7468
+cap "MNC/G" "MR/B" 47.7686
+cap "MIP/D" "MP/B" 0.531465
+cap "MP/S1" "MIP/D" -2.47113
+cap "MR/B" "MP/B" 33.7218
+cap "MP/S1" "MR/B" 69.4923
+cap "MR/B" "MP/B" -1.12759
+cap "MP/B" "MP/S1" -0.12896
+cap "MR/D" "MP/S1" 3.55271e-15
+cap "MP/B" "MIP/D" -0.881194
+cap "MP/B" "MR/D" 2.19064
+merge "MIN/S" "MIN/B" -1632.72 0 0 0 0 0 0 0 0 0 0 -50320 -3232 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -50320 -3232 -55660 -3248 0 0 0 0 0 0 0 0 0 0
+merge "MIN/B" "MIP/VSUBS"
+merge "MIP/VSUBS" "MNA/S"
+merge "MNA/S" "MNA/B"
+merge "MNA/B" "MNB/S"
+merge "MNB/S" "MNB/B"
+merge "MNB/B" "MNC/S"
+merge "MNC/S" "MNC/B"
+merge "MNC/B" "MP/VSUBS"
+merge "MP/VSUBS" "MR/B"
+merge "MR/B" "VSUBS"
+merge "VSUBS" "VSS"
+merge "MIN/G" "MIP/G" -536.117 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -22816 -1636 0 0 0 0 0 0 0 0 0 0
+merge "MIP/G" "MNA/D"
+merge "MNA/D" "MNB/D"
+merge "MNB/D" "MNC/D"
+merge "MNC/D" "MP/S3"
+merge "MP/S3" "MP/S1"
+merge "MP/S1" "YB"
+merge "MP/G" "MR/D" -318.649 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -18044 -1100 0 0 0 0 0 0 0 0 0 0
+merge "MR/D" "FG"
+merge "MNC/G" "C" -60.3321 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2668 -208 0 0 0 0 0 0 0 0 0 0
+merge "MIP/S" "MIP/B" -865.455 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -17080 -1456 0 0 0 0 0 0 0 0 0 0
+merge "MIP/B" "MP/a_159_n364#"
+merge "MP/a_159_n364#" "MP/D2"
+merge "MP/D2" "MP/D0"
+merge "MP/D0" "MP/B"
+merge "MP/B" "m1_144_2840#"
+merge "m1_144_2840#" "VDD"
+merge "MNA/G" "A" -94.0392 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2668 -208 0 0 0 0 0 0 0 0 0 0
+merge "MIN/D" "MIP/D" -165.245 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -6992 -488 0 0 0 0 0 0 0 0 0 0
+merge "MIP/D" "Y"
+merge "MR/G" "RST" -72.9402 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -4232 -276 0 0 0 0 0 0 0 0 0 0
+merge "MR/S" "VB" -35.5669 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -3496 -244 0 0 0 0 0 0 0 0 0 0
+merge "MNB/G" "B" -82.2974 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2668 -208 0 0 0 0 0 0 0 0 0 0

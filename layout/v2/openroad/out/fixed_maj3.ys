@@ -1,0 +1,12 @@
+read_verilog baselines.v
+hierarchy -top fixed_maj3
+synth -flatten -top fixed_maj3
+dfflibmap -liberty /Users/rein/projects/fgmos_rtl/.eda/pdk/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty /Users/rein/projects/fgmos_rtl/.eda/pdk/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib -D 1000
+opt_clean -purge
+hilomap -hicell sky130_fd_sc_hd__conb_1 HI -locell sky130_fd_sc_hd__conb_1 LO
+setundef -zero
+splitnets
+opt_clean -purge
+tee -o out/fixed_maj3.synth_stat.txt stat -liberty /Users/rein/projects/fgmos_rtl/.eda/pdk/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+write_verilog -noattr -noexpr -nohex -nodec out/fixed_maj3.syn.v

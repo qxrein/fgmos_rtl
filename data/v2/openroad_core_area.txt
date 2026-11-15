@@ -1,0 +1,9 @@
+thr3 135.1
+thr5 367.9
+thr7 402.9
+thr9 619.3
+lut3 530.5
+lut5 1689.1
+lut7 6831.6
+recfg3_mux 125.1
+fixed_maj3 42.5

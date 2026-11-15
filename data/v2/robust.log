@@ -1,0 +1,397 @@
+     kind   value   temp   vdd  mode     vb  delta  t_p     truth    ok   tpd_ps     E_fJ
+0     vdd    1.62   27.0  1.62  AND3  0.200  0.153  0.3  00000001  True  183.761  117.185
+1     vdd    1.62   27.0  1.62  MAJ3  0.440  0.153  0.3  00010111  True  186.251   94.439
+2     vdd    1.62   27.0  1.62   OR3  0.693  0.153  0.3  01111111  True  235.857   62.734
+3     vdd    1.71   27.0  1.71  AND3  0.252  0.160  0.3  00000001  True  160.994  139.971
+4     vdd    1.71   27.0  1.71  MAJ3  0.506  0.160  0.3  00010111  True  165.688  111.282
+5     vdd    1.71   27.0  1.71   OR3  0.772  0.160  0.3  01111111  True  210.893   71.556
+6     vdd    1.80   27.0  1.80  AND3  0.306  0.168  0.3  00000001  True  144.257  164.556
+7     vdd    1.80   27.0  1.80  MAJ3  0.573  0.168  0.3  00010111  True  149.962  129.335
+8     vdd    1.80   27.0  1.80   OR3  0.852  0.168  0.3  01111111  True  191.537   80.765
+9     vdd    1.89   27.0  1.89  AND3  0.361  0.175  0.3  00000001  True  131.433  190.956
+10    vdd    1.89   27.0  1.89  MAJ3  0.640  0.175  0.3  00010111  True  137.629  148.626
+11    vdd    1.89   27.0  1.89   OR3  0.932  0.175  0.3  01111111  True  176.074   90.419
+12    vdd    1.98   27.0  1.98  AND3  0.416  0.183  0.3  00000001  True  121.317  219.037
+13    vdd    1.98   27.0  1.98  MAJ3  0.708  0.183  0.3  00010111  True  127.776  169.067
+14    vdd    1.98   27.0  1.98   OR3  1.013  0.183  0.3  01111111  True  163.517  100.554
+15   temp  -40.00  -40.0  1.80  AND3  0.175  0.169  0.3  00000001  True  153.654  182.137
+16   temp  -40.00  -40.0  1.80  MAJ3  0.437  0.169  0.3  00010111  True  153.403  141.709
+17   temp  -40.00  -40.0  1.80   OR3  0.709  0.169  0.3  01111111  True  187.894   82.602
+18   temp    0.00    0.0  1.80  AND3  0.253  0.168  0.3  00000001  True  147.350  171.151
+19   temp    0.00    0.0  1.80  MAJ3  0.518  0.168  0.3  00010111  True  151.065  133.866
+20   temp    0.00    0.0  1.80   OR3  0.794  0.168  0.3  01111111  True  190.083   81.394
+21   temp   27.00   27.0  1.80  AND3  0.306  0.168  0.3  00000001  True  144.257  164.556
+22   temp   27.00   27.0  1.80  MAJ3  0.573  0.168  0.3  00010111  True  149.962  129.335
+23   temp   27.00   27.0  1.80   OR3  0.852  0.168  0.3  01111111  True  191.537   80.765
+24   temp   85.00   85.0  1.80  AND3  0.419  0.166  0.3  00000001  True  139.321  152.485
+25   temp   85.00   85.0  1.80  MAJ3  0.690  0.166  0.3  00010111  True  148.431  121.357
+26   temp   85.00   85.0  1.80   OR3  0.976  0.166  0.3  01111111  True  194.647   79.884
+27   temp  125.00  125.0  1.80  AND3  0.496  0.166  0.3  00000001  True  137.048  145.727
+28   temp  125.00  125.0  1.80  MAJ3  0.771  0.166  0.3  00010111  True  147.863  117.027
+29   temp  125.00  125.0  1.80   OR3  1.062  0.166  0.3  01111111  True  196.676   79.648
+30   edge   20.00   27.0  1.80  AND3  0.307  0.167  0.3  00000001  True  135.707  156.376
+31   edge   20.00   27.0  1.80  MAJ3  0.571  0.167  0.3  00010111  True  143.861  124.468
+32   edge   20.00   27.0  1.80   OR3  0.849  0.167  0.3  01111111  True  186.731   80.084
+33   edge  100.00   27.0  1.80  AND3  0.307  0.167  0.3  00000001  True  160.560  177.751
+34   edge  100.00   27.0  1.80  MAJ3  0.571  0.167  0.3  00010111  True  165.621  139.477
+35   edge  100.00   27.0  1.80   OR3  0.849  0.167  0.3  01111111  True  205.216   83.999
+36   edge  200.00   27.0  1.80  AND3  0.307  0.167  0.3  00000001  True  198.811  205.122
+37   edge  200.00   27.0  1.80  MAJ3  0.571  0.167  0.3  00010111  True  199.525  160.050
+38   edge  200.00   27.0  1.80   OR3  0.849  0.167  0.3  01111111  True  232.127   90.499
+39   load    5.00   27.0  1.80  AND3  0.307  0.167  0.3  00000001  True  143.711  164.464
+40   load    5.00   27.0  1.80  MAJ3  0.571  0.167  0.3  00010111  True  150.789  129.755
+41   load    5.00   27.0  1.80   OR3  0.849  0.167  0.3  01111111  True  192.974   81.184
+42   load   20.00   27.0  1.80  AND3  0.307  0.167  1.2  00000001  True  284.669  606.510
+43   load   20.00   27.0  1.80  MAJ3  0.571  0.167  1.2  00010111  True  277.089  442.333
+44   load   20.00   27.0  1.80   OR3  0.849  0.167  1.2  01111111  True  312.125  208.517
+45   load   50.00   27.0  1.80  AND3  0.307  0.167  1.5  00000001  True  564.655  763.471
+46   load   50.00   27.0  1.80  MAJ3  0.571  0.167  1.5  00010111  True  527.654  586.222
+47   load   50.00   27.0  1.80   OR3  0.849  0.167  1.5  01111111  True  543.563  321.236
+48  reset    0.50   27.0  1.80  AND3  0.307  0.167  0.3  00000001  True  143.687  164.415
+49  reset    0.50   27.0  1.80  MAJ3  0.571  0.167  0.3  00010111  True  150.784  129.709
+50  reset    0.50   27.0  1.80   OR3  0.849  0.167  0.3  01111111  True  192.974   81.152
+51  reset    0.30   27.0  1.80  AND3  0.307  0.167  0.3  00000001  True  143.658  164.437
+52  reset    0.30   27.0  1.80  MAJ3  0.571  0.167  0.3  00010111  True  150.781  129.732
+53  reset    0.30   27.0  1.80   OR3  0.849  0.167  0.3  01111111  True  192.974   81.172
+54  reset    0.20   27.0  1.80  AND3  0.307  0.167  0.3  00000001  True  143.629  164.398
+55  reset    0.20   27.0  1.80  MAJ3  0.571  0.167  0.3  00010111  True  150.778  129.697
+56  reset    0.20   27.0  1.80   OR3  0.849  0.167  0.3  01111111  True  192.974   81.148
+57  reset    0.10   27.0  1.80  AND3  0.307  0.167  0.3  00000001  True  143.580  164.396
+58  reset    0.10   27.0  1.80  MAJ3  0.571  0.167  0.3  00010111  True  150.776  129.701
+59  reset    0.10   27.0  1.80   OR3  0.849  0.167  0.3  01111111  True  192.974   81.152
+.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/pool.py", line 131, in worker
+    put((job, i, result))
+    ~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/queues.py", line 397, in put
+    self._writer.send_bytes(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/process.py", line 313, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/queues.py", line 397, in put
+    self._writer.send_bytes(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Process SpawnPoolWorker-4:
+Traceback (most recent call last):
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/pool.py", line 131, in worker
+    put((job, i, result))
+    ~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/queues.py", line 397, in put
+    self._writer.send_bytes(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/process.py", line 313, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/queues.py", line 397, in put
+    self._writer.send_bytes(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Process SpawnPoolWorker-7:
+Traceback (most recent call last):
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/pool.py", line 131, in worker
+    put((job, i, result))
+    ~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/queues.py", line 397, in put
+    self._writer.send_bytes(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/process.py", line 313, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/queues.py", line 397, in put
+    self._writer.send_bytes(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Process SpawnPoolWorker-2:
+Traceback (most recent call last):
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/pool.py", line 131, in worker
+    put((job, i, result))
+    ~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/queues.py", line 397, in put
+    self._writer.send_bytes(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/process.py", line 313, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/queues.py", line 397, in put
+    self._writer.send_bytes(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Process SpawnPoolWorker-1:
+Traceback (most recent call last):
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/pool.py", line 131, in worker
+    put((job, i, result))
+    ~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/queues.py", line 397, in put
+    self._writer.send_bytes(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/process.py", line 313, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/queues.py", line 397, in put
+    self._writer.send_bytes(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Process SpawnPoolWorker-10:
+Traceback (most recent call last):
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/pool.py", line 131, in worker
+    put((job, i, result))
+    ~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/queues.py", line 397, in put
+    self._writer.send_bytes(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/process.py", line 313, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/queues.py", line 397, in put
+    self._writer.send_bytes(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Process SpawnPoolWorker-3:
+Traceback (most recent call last):
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/pool.py", line 131, in worker
+    put((job, i, result))
+    ~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/queues.py", line 397, in put
+    self._writer.send_bytes(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/process.py", line 313, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/queues.py", line 397, in put
+    self._writer.send_bytes(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Process SpawnPoolWorker-9:
+Traceback (most recent call last):
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/pool.py", line 131, in worker
+    put((job, i, result))
+    ~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/queues.py", line 397, in put
+    self._writer.send_bytes(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/process.py", line 313, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/queues.py", line 397, in put
+    self._writer.send_bytes(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 427, in _send_bytes
+    self._send(header + buf)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/connection.py", line 384, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+/Users/rein/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/multiprocessing/resource_tracker.py:301: UserWarning: resource_tracker: There appear to be 6 leaked semaphore objects to clean up at shutdown: {'/mp-8al7p_pf', '/mp-_ns35_wl', '/mp-0c6ck30a', '/mp-ryivxmrj', '/mp-evwy73uh', '/mp-g86qlmj5'}
+  warnings.warn(

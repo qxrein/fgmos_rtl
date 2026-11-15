@@ -29,7 +29,8 @@ def run():
     CT = cell.CT
     sigma0 = np.sqrt(kB * T / CT)
     # NOR-programmed band — steep analog transition for p-bit statistics
-    VCTRL_PBIT = 0.68
+    # Vctrl=1.12V gives Vfg=(18+5.6)/40=0.59V, overdrive=100mV at TT corner
+    VCTRL_PBIT = 1.12
     print(f"  Thermal noise floor σ₀ = {sigma0*1e6:.1f} μV  (kT/C, CT={CT*1e15:.0f}fF)")
     
     N_MC = 50_000

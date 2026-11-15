@@ -1,0 +1,36 @@
+
+Magic 8.3 revision 681 - Compiled on Tue Jan  1 00:00:00 UTC 1980.
+Starting magic under Tcl interpreter
+Using the terminal as the console.
+WARNING: RLIMIT_NOFILE is above 1024 and Tcl_Version<9 this may cause runtime issues [rlim_cur=1048576]
+Using NULL graphics device.
+Processing system .magicrc file
+Switching to WIRING tool.
+Switching to NETLIST tool.
+Switching to PICK tool.
+Switching to BOX tool.
+Sourcing design .magicrc for technology sky130A ...
+2 Magic internal units = 1 Lambda
+Input style sky130(): scaleFactor=2, multiplier=2
+The following types are not handled by extraction and will be treated as non-electrical types:
+    ubm 
+Scaled tech values by 2 / 1 to match internal grid scaling
+Loading sky130A Device Generator Menu ...
+Loading "gen_devs.tcl" from command line.
+Diagnostic: Device bounding box e -0.3849999913945794 -2.4849999444559216 0.3849999913945794 2.12999995239079 (um)
+Moving label "B" from nsubdiff to nsubdiffcont in cell sky130_fd_pr__pfet_01v8_V7R9RB.
+Diagnostic: Device bounding box e -0.36499999184161425 -0.9849999779835343 0.36499999184161425 0.6299999859184027 (um)
+Moving label "B" from nsubdiff to nsubdiffcont in cell sky130_fd_pr__pfet_01v8_SEBX2B.
+Diagnostic: Device bounding box e -0.36499999184161425 -0.6499999854713678 0.36499999184161425 0.3399999924004078 (um)
+Moving label "B" from psubdiff to psubdiffcont in cell sky130_fd_pr__nfet_01v8_M48NH5.
+Diagnostic: Device bounding box e -0.5399999879300594 -0.6499999854713678 0.5399999879300594 0.3399999924004078 (um)
+Moving label "B" from psubdiff to psubdiffcont in cell sky130_fd_pr__nfet_01v8_EQ7N4B.
+Writing 'sky130_fd_pr__nfet_01v8_M48NH5'
+Writing 'sky130_fd_pr__pfet_01v8_V7R9RB'
+Writing 'sky130_fd_pr__nfet_01v8_EQ7N4B'
+Writing 'devs'
+Writing 'sky130_fd_pr__pfet_01v8_SEBX2B'
+Writing '(UNNAMED)'
+Must specify name for cell (UNNAMED).
+Can't write file named '(UNNAMED)'
+DONE
